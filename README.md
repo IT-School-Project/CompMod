@@ -5,4 +5,4 @@ We are making a github school project utilizing HTML, CSS, MySQL, PHP and some J
 #### **Website Found Here:**
 ![CompShop](http://github.com/IT-School-Project/www.git)
 
-#### *__Disclaimer:__ This is not an actual store page*
+*__Disclaimer:__ This is not an actual store page!*
