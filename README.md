@@ -2,7 +2,7 @@
 
 We are making a github school project utilizing HTML, CSS, MySQL, PHP and some JavaScript. The idea is to make a store page for buying computers, combining these languages.
 
-#### **Website Found Here:** SLink not working
+#### **Website Found Here:** Link not working
 ![CompShop](http://github.com/IT-School-Project/www.git)
 
 *__Disclaimer:__ This is not an actual store page!*
