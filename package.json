@@ -1,0 +1,30 @@
+{
+  "name": "it-project",
+  "version": "1.0.0",
+  "description": "We are making a github school project utilizing HTML, CSS, MySQL, PHP and some JavaScript. The idea is to make a store page for buying computers, combining these languages.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IT-School-Project/www.git"
+  },
+  "keywords": [
+    "Shop",
+    "JS",
+    "SASS",
+    "HTML",
+    "computer",
+    "parts"
+  ],
+  "author": "Leif Eggenfellner and Patrick Nikolay Falkeid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IT-School-Project/www/issues"
+  },
+  "homepage": "https://github.com/IT-School-Project/www#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
