@@ -1,20 +1,18 @@
-<header>
-<nav class="topnav fixed-top">
-        <ul class="navbar-nav">
-            <img src="../img/logo.png" alt="">
-            <li class="nav-item"><a class="nav-link" href="">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Shop</a></li>
+<nav class="navbar">
+    <section class="menu">
+        <ul>
+            <li><a href="#"><img class="img" src="../img/logo.png" alt=""></a></li>
+            <li><a class="menu-item" href="#">Home</a></li>
+            <li><a class="menu-item" href="#">Shop</a></li>
+            <li><a class="menu-item" href="#">Wishlist</a></li>
+            <li><a class="menu-item" href="#">Customer Service</a></li>
+            <li><a id="search" href="#"><i class="fa fa-search"></i></a></li>
+            <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
         </ul>
-        <form action="" method="get" class="form-inline">
-            <input type="text" class="form-control" placeholder="Search">
-            <i></i>
-        </form>
-        <ul class="logos">
-            <li class="logo headset"><a href="#"><i class="fas fa-headset"></i>Customer Service</a></li>
-            <li class="logo heart"><a href="#"><i class="far fa-heart"></i>Wishlist</a></li>
-            <li class="logo user"><a href="#"><i class="far fa-user"></i>User</a></li>
-            <li class="logo cart"><a href="#"><i class="fas fa-shopping-cart"></i>0,00</a></li>
-        </ul>
-    </nav>
-</header>
-    
+        <section class="search-form">
+            <form>
+                <input type="text" name="" placeholder="Search">
+            </form>
+        </section>
+    </section>
+</nav>
