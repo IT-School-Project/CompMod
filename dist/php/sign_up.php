@@ -1,5 +1,5 @@
 <?php 
-require '..\config\dbconnect.php';
+
 
 if (( 
 isset($_POST['username']) && 
@@ -44,91 +44,125 @@ is_numeric($_POST['post_nr'])){
 
 }
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>New user</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css"  href="../css/main.css">
-    <link rel="icon"       type="image/png" hrfe="favicon.png">
-  </head>
+<?php require '../inc/header.php'?>
   <body>
-    <?php require_once '..\inc\nav.php' ?>
-    <form class="signup" action="sign_up.php" method="post">
-      <label for="inputUsername">Username</label>
-      <input 
-        id="inputUsername"
-        name="username"
-        type="text"
-        placeholder="xXx_King1_xXx"
-      >
+    <?php require '../inc/nav.php' ?>
+    <section class="limiter">
 
-      <label for="inputPassword">Password</label>
-      <input 
-        id="inputPassword"
-        name="password"
-        type="password"
-        placeholder="Hunter2"
-      ></input>
+      <section class="signup">
 
-      <label for="inputEpost">Epost</label>
-      <input 
-        id="inputEpost"
-        name="epost"
-        type="text"
-        placeholder="yourname@email.com"
-      >
+        <form class="signup" action="sign_up.php" method="post">
 
-      <label for="inputfirst_name">Full Name</label>
-      <input 
-        id="inputFirstName"
-        name="first_name"
-        type="text"
-        placeholder="John"
-      >
+          <h1>Account Registration</h1>
 
-      <label for="inputSurname">Surname</label>
-      <input 
-        id="inputSurname"
-        name="surname"
-        type="text"
-        placeholder="Doe"
-      ></input>
+          <section class="wrap-input uname">
+            <label for="inputUsername" class="login-form-title">Username</label>
+            <input id="inputUsername" name="username" type="text" placeholder="TheLegend27">
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+          
+          <section class="wrap-input pwd">
+            <label for="inputPassword">Password</label>
+            <input 
+              id="inputPassword"
+              name="password"
+              type="password"
+              placeholder="Hunter2"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
 
-      <label for="inputPost_nr">Postnummer</label>
-      <input 
-        id="inputPost_nr"
-        name="post_nr"
-        type="text"
-        placeholder="1337"
-      ></input>
+          <section class="wrap-input email">
+            <label for="inputEpost">Email</label>
+            <input 
+              id="inputEpost"
+              name="epost"
+              type="text"
+              placeholder="yourname@email.com"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+          
+          <section class="wrap-input fname">
+            <label for="inputfirst_name">First Name</label>
+            <input 
+              id="inputFirstName"
+              name="first_name"
+              type="text"
+              placeholder="John"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
 
-      <label for="inputAddress">Addresse</label>
-      <input 
-        id="inputAddress"
-        name="address"
-        type="text"
-        placeholder="42 Wallaby Way, Sydney"
-      ></input>
-
-      <label for="inputAddress2">Addresse2</label>
-      <input 
-        id="inputAddress2"
-        name="address2"
-        type="text"
-        placeholder="Not required. If you have a second address or any other need to use this field"
-      ></input>
-
-      <label for="inputImg">Profilbilde</label>
-      <input 
-        id="inputImg"
-        name="img"
-        type="text"
-        placeholder="required, but wip. Just write whatever text you want"
-      ></input>
-
-      <input type="submit" value="Submit">
-    </form>
+          <section class="wrap-input sname">
+            <label for="inputSurname">Surname</label>
+            <input 
+              id="inputSurname"
+              name="surname"
+              type="text"
+              placeholder="Doe">
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+            
+          <section class="wrap-input post_nr">
+            <label for="inputPost_nr">Postnummer</label>
+            <input 
+              id="inputPost_nr"
+              name="post_nr"
+              type="text"
+              placeholder="1337"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+          
+          <section class="wrap-input address">
+            <label for="inputAddress">Addresse</label>
+            <input 
+              id="inputAddress"
+              name="address"
+              type="text"
+              placeholder="42 Wallaby Way, Sydney"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+          
+          <section class="wrap-input address2">
+            <label for="inputAddress2">Addresse 2</label>
+            <input 
+              id="inputAddress2"
+              name="address2"
+              type="text"
+              placeholder="Not required"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+          
+          <section class="wrap-input img">
+            <label for="inputImg">Profilbilde</label>
+            <input 
+              id="inputImg"
+              name="img"
+              type="text"
+              placeholder="Required, but wip. Just write whatever text you want"
+            >
+            <span class="focus-input-1"></span>
+            <span class="focus-input-2"></span>
+          </section>
+          
+          <section class="container-login-form-btn">
+            <button class="login-form-btn">Sign Up</button>
+          </section>
+        </form>
+      </section>
+    </section>
+    <?php require '../inc/script.php'?>
   </body>
 </html>
-<?php include '../config/dbdisconnect.php' ?>
