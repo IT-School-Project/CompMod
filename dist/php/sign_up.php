@@ -34,7 +34,7 @@ is_numeric($_POST['post_nr'])){
   }
 
 
-  
+
   $result = mysqli_query($conn, $sql);
   if (!$result){
     die("No result");
@@ -49,12 +49,12 @@ is_numeric($_POST['post_nr'])){
   <head>
     <title>New user</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css"  href="style.css">
+    <link rel="stylesheet" type="text/css"  href="../css/main.css">
     <link rel="icon"       type="image/png" hrfe="favicon.png">
   </head>
   <body>
     <?php require_once '..\inc\nav.php' ?>
-    <form action="sign_up.php" method="post">
+    <form class="signup" action="sign_up.php" method="post">
       <label for="inputUsername">Username</label>
       <input 
         id="inputUsername"
@@ -103,6 +103,7 @@ is_numeric($_POST['post_nr'])){
         placeholder="1337"
       ></input>
 
+      <label for="inputAddress">Addresse</label>
       <input 
         id="inputAddress"
         name="address"
@@ -110,6 +111,7 @@ is_numeric($_POST['post_nr'])){
         placeholder="42 Wallaby Way, Sydney"
       ></input>
 
+      <label for="inputAddress2">Addresse2</label>
       <input 
         id="inputAddress2"
         name="address2"
@@ -117,6 +119,7 @@ is_numeric($_POST['post_nr'])){
         placeholder="Not required. If you have a second address or any other need to use this field"
       ></input>
 
+      <label for="inputImg">Profilbilde</label>
       <input 
         id="inputImg"
         name="img"
