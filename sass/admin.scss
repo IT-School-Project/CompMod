@@ -1,21 +1,21 @@
-@import '../dist/inc/vars.scss';
+@import "../dist/inc/vars.scss";
 
 .admin-head {
-    margin-left: 10px;
-    margin-bottom: 0;
-    color: $secondary-color;
+  margin-left: 10px;
+  margin-bottom: 0;
+  color: $secondary-color;
 }
 
 .adds {
-    margin-left: 5px;
+  margin-left: 5px;
 
-    fieldset {
-        width: 22%;
-        border-radius: 8px;
-        border: solid $secondary-color 2px;
+  fieldset {
+    width: 22%;
+    border-radius: 8px;
+    border: solid $secondary-color 2px;
 
-        legend {
-            color: $secondary-color;
-        }
+    legend {
+      color: $secondary-color;
     }
+  }
 }
