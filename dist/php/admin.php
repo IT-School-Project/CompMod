@@ -1,3 +1,4 @@
+<?php require '../config/dbconnect.php'?>
 <?php require '../inc/header.php'?>
 <body class="admin-body">
     <?php require '../inc/nav.php'?>
@@ -25,5 +26,6 @@
         </fieldset>
     </form>
     <?php require '../inc/script.php'?>
+    <?php include '../dbdisconnect.php'?>
 </body>
 </html>
