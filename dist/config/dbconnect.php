@@ -9,10 +9,11 @@
   $conn = mysqli_connect(
     $servername, $username, $password, $dbname
   );
-
+  
   mysqli_set_charset($conn, "utf-8");
-  // check connection
-  if (!$conn) {
-    die("connection to database failed");
+
+
+  if(!$conn){
+    die("Fatal error: connection to database could not be established");
   }
 ?>
