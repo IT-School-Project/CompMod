@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400");
 
-$primary-color: rgb(10, 93, 166);
-$secondary-color: rgb(20, 110, 166);
-$third-color: rgb(65, 155, 191);
-$fourth-color: rgb(217, 77, 26);
-$main-white: rgb(242, 224, 220);
-$main-black: rgb(0, 0, 0);
+@import "../dist/inc/vars.scss";
 
 body {
   margin: 0;
@@ -144,4 +139,12 @@ nav {
     color: $main-white;
     font-family: fontAwesome;
   }
+}
+
+// END OF NAV
+
+// SIGN_UP
+form {
+  margin: 0;
+  padding: 0;
 }
