@@ -26,22 +26,23 @@ is_numeric($_POST['post_nr'])){
 
   if (isset($_POST['address2'])){
     $address2 = $_POST['address2'];
-    $sql = "INSERT INTO author(username,password,email,first_name,surname,address1,address2,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$address2\", \"$post_nr\", \"$img\" )";
+    $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,address2,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$address2\", \"$post_nr\", \"$img\" )";
   }
 
   else{
-  $sql = "INSERT INTO author(username,password,email,first_name,surname,address1,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$post_nr\", \"$img\" )";
+  $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$post_nr\", \"$img\" )";
   }
 
-  echo $sql;
 
-
+  
   $result = mysqli_query($conn, $sql);
   if (!$result){
     die("No result");
   }
+
+
+
 }
-echo $sql;
 ?>
 <!DOCTYPE html>
 <html>
