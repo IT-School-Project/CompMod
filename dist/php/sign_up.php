@@ -1,4 +1,5 @@
 <?php 
+require '../config/dbconnect.php';
 
 
 if (( 
@@ -166,3 +167,4 @@ is_numeric($_POST['post_nr'])){
     <?php require '../inc/script.php'?>
   </body>
 </html>
+<?php require '../config/dbdisconnect.php' ?>
