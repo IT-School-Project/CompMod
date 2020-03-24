@@ -1,7 +1,9 @@
 <?php require '../config/dbconnect.php';
 
 if (
-isset($_POST['category'])){
+isset($_POST['category'])
+&& $_POST['category'] != ""
+){
     $category = $_POST['category'];
     $sql = "INSERT INTO category(category) VALUES('$category')";
     $result = mysqli_query($conn, $sql);
@@ -11,9 +13,11 @@ isset($_POST['category'])){
 }
 
 if (
-isset($_POST['spec'])){
+isset($_POST['spec'])
+&& $_POST['spec'] != ""
+){
     $spec = $_POST['spec'];
-    $sql = "INSERT INTO spec(spec,type) VALUES('$spec', 'test')";
+    $sql = "INSERT INTO spec(spec,type) VALUES('$spec', 2)"; #TODO: dynamic type from dropdown menu
     $result = mysqli_query($conn, $sql);
     if (!$result){
         die("No result, spec");
@@ -21,9 +25,11 @@ isset($_POST['spec'])){
 }
 
 if (
-isset($_POST['type'])){
+isset($_POST['type'])
+&& $_POST['type'] != ""
+){
     $type = $_POST['type'];
-    $sql = "INSERT INTO type(type) VALUES('$type')";
+    $sql = "INSERT INTO type(name) VALUES('$type')";
     $result = mysqli_query($conn, $sql);
     if (!$result){
         die("No result, type");
@@ -66,6 +72,10 @@ require '../inc/header.php';
         </fieldset>
 
     </form>
+    <h2>TODO:</h2>
+    <ul>
+        <li>Make it so that admin page can't add duplicate values</li>
+    </ul>
     <?php require '../inc/script.php'?>
     <?php include '../config/dbdisconnect.php'?>
 </body>
