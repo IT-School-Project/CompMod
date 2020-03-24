@@ -44,9 +44,11 @@ nav {
           font-size: 1.2em; }
         nav .menu ul li .menu-item:hover {
           color: #d94d1a;
-          transition: all 0.2s ease-out; }
+          transition: all 0.2s ease-in; }
         nav .menu ul li a.menu-item.hide-item {
           transform: scale(0); }
+        nav .menu ul li a .fa-search {
+          z-index: 2; }
       nav .menu ul li:nth-child(2) a.menu-item.hide-item {
         transition-delay: 0.3s; }
       nav .menu ul li:nth-child(3) a.menu-item.hide-item {
