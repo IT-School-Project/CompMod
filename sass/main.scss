@@ -59,11 +59,17 @@ nav {
 
         .menu-item:hover {
           color: $fourth-color;
-          transition: all 0.2s ease-out;
+          transition: all 0.2s ease-in;
         }
 
         a.menu-item.hide-item {
           transform: scale(0);
+        }
+
+        a {
+          .fa-search {
+            z-index: 2;
+          }
         }
       }
 
