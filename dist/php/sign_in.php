@@ -2,13 +2,15 @@
 session_start();
 
 if (isset($_POST['password']) && isset($_POST['username'])){
+  require '../config/dbconnect.php';
   $password = $_POST['password'];
   $username = $_POST['username'];
-  echo $password.$username;
-
-  require '../config/dbconnect.php';
-  $sql = "SELECT id, username, password FROM users WHERE username = \"$username\" AND password = SHA2(\"$password\",256)";
+  echo $password." ".$username." ";
+  
+  $sql = "SELECT id, username, password FROM users WHERE username = \"$username\" AND password = SHA2(\"$password\",256)";# this works perfectly well in sql, dunno what the problem might be
+  echo " ".$sql." ";
   $result = mysqli_query($conn, $sql);
+
   if(!$result){
     die( "login failed" );
     session_destroy();
