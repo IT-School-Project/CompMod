@@ -1,4 +1,6 @@
-<?php require '../config/dbconnect.php'?>
+<?php 
+require '../config/dbconnect.php';?>
+
 
 <?php
 if (( 
@@ -13,7 +15,6 @@ isset($_POST['img'])) &&
 is_numeric($_POST['post_nr'])){
 
 
-
   $username = $_POST['username'];
   $epost = $_POST['epost'];
   $name = $_POST['first_name'];
@@ -21,27 +22,26 @@ is_numeric($_POST['post_nr'])){
   $post_nr = $_POST['post_nr'];
   $surname = $_POST['surname']; 
   $address = $_POST['address']; 
-  $img = $_POST['img'];
+  $img = $_POST['img']; 
 
+  $sqlCheck = "SELECT id, username, password FROM users WHERE username = \"$username\" AND password = SHA2(\"$password\",256)";
+  $resultCheck = mysqli_query($conn, $sqlCheck);
+  
+  
+  if (mysqli_num_rows($resultCheck) == 0){
+    if (isset($_POST['address2'])){
+      $address2 = $_POST['address2'];
+      $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,address2,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$address2\", \"$post_nr\", \"$img\" )";
+    }
 
-  if (isset($_POST['address2'])){
-    $address2 = $_POST['address2'];
-    $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,address2,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$address2\", \"$post_nr\", \"$img\" )";
+    else{
+    $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$post_nr\", \"$img\" )";
+    }
+    $result = mysqli_query($conn, $sql);
+    if (!$result){
+      die("No result");
+    }
   }
-
-  else{
-  $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$post_nr\", \"$img\" )";
-  }
-
-
-
-  $result = mysqli_query($conn, $sql);
-  if (!$result){
-    die("No result");
-  }
-
-
-
 }
 ?>
 <?php require '../inc/header.php'?>
@@ -166,4 +166,4 @@ is_numeric($_POST['post_nr'])){
     <?php require '../inc/script.php'?>
   </body>
 </html>
-<?php require '../config/dbdisconnect.php'?>
+<?php require '../config/dbdisconnect.php' ?>
