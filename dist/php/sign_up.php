@@ -1,6 +1,6 @@
-<?php 
+<?php require '../config/dbconnect.php'?>
 
-
+<?php
 if (( 
 isset($_POST['username']) && 
 isset($_POST['epost']) && 
@@ -166,3 +166,4 @@ is_numeric($_POST['post_nr'])){
     <?php require '../inc/script.php'?>
   </body>
 </html>
+<?php require '../config/dbdisconnect.php'?>
