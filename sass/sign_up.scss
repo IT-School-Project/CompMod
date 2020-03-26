@@ -1,0 +1,297 @@
+@import "../dist/inc/vars.scss";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Segoe UI Light', sans-serif;
+    overflow: hidden;
+    height: 100%;
+}
+
+h1 {
+    margin: 0px;
+}
+
+input {
+    outline: none;
+    border: none;
+
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-family: 'Segoe UI Light', sans-serif;
+    font-size: 15px;
+    color: $secondary-color;
+    line-height: 1.2;
+    height: 30px;
+    padding: 0 5px;
+}
+
+input::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+input:-moz-placeholder {
+    color: #aaa;
+}
+
+input::-moz-placeholder {
+    color: #aaa;
+}
+
+input:-ms-input-placeholder {
+    color: #aaa;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+
+    .signup {
+
+        .signup-form {
+            background: $third-color;
+            padding: 2em;
+            height: 62vh;
+            width: 16vw;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -31vh;
+            margin-left: -8vw;
+
+            .signup-form-title {
+                display: block;
+                font-family: 'Segoe UI Light', sans-serif;
+                font-size: 30px;
+                color: #fff;
+                line-height: 1.2;
+                text-align: center;
+            }
+
+            .wrap-input {
+                width: 100%;
+                position: relative;
+                background-color: #fff;
+                border: 1px solid #e6e6e6;
+
+                label {
+                    margin: 2px 0px 0px 2px;
+                    font-family: 'Segoe UI Light', sans-serif;
+                }
+
+                .focus-input-1,
+                .focus-input-2 {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
+                }
+
+                .focus-input-1::before,
+                .focus-input-2::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: $primary-color;
+                }
+
+                .focus-input-1::before {
+                    top: -2px;
+                    left: 0;
+                }
+
+                .focus-input-2::before {
+                    bottom: -2px;
+                    right: 0;
+                }
+
+                .focus-input-1::after,
+                .focus-input-2::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 2px;
+                    height: 0;
+                    background-color: $primary-color;
+                }
+
+                .focus-input-1::after {
+                    top: 0;
+                    right: -2px;
+                }
+
+                .focus-input-2::after {
+                    bottom: 0;
+                    left: -2px;
+                }
+
+                input:focus+.focus-input-1::before {
+                    -webkit-animation: full-w 0.2s linear 0s;
+                    animation: full-w 0.2s linear 0s;
+                    animation-fill-mode: both;
+                    -webkit-animation-fill-mode: both;
+                }
+
+                input:focus+.focus-input-1::after {
+                    -webkit-animation: full-h 0.1s linear 0.2s;
+                    animation: full-h 0.1s linear 0.2s;
+                    animation-fill-mode: both;
+                    -webkit-animation-fill-mode: both;
+                }
+
+                input:focus+.focus-input-1+.focus-input-2::before {
+                    -webkit-animation: full-w 0.2s linear 0.3s;
+                    animation: full-w 0.2s linear 0.3s;
+                    animation-fill-mode: both;
+                    -webkit-animation-fill-mode: both;
+                }
+
+                input:focus+.focus-input-1+.focus-input-2::after {
+                    -webkit-animation: full-h 0.1s linear 0.5s;
+                    animation: full-h 0.1s linear 0.5s;
+                    animation-fill-mode: both;
+                    -webkit-animation-fill-mode: both;
+                }
+            }
+
+            .wrap-input.uname {
+                margin-top: 20px;
+            }
+
+            .wrap-input.pwd {
+                margin-top: 20px;
+            }
+
+            .wrap-input.email {
+                margin-top: 20px;
+            }
+
+            .wrap-input.fname {
+                margin-top: 20px;
+            }
+
+            .wrap-input.sname {
+                margin-top: 20px;
+            }
+
+            .wrap-input.post_nr {
+                margin-top: 20px;
+            }
+
+            .wrap-input.address {
+                margin-top: 20px;
+            }
+
+            .wrap-input.address2 {
+                margin-top: 20px;
+            }
+
+            .wrap-input.img {
+                margin-top: 20px;
+            }
+
+            .container-signup-form-btn {
+                width: 100%;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .signup-form-btn {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 30px;
+                padding: 0 20px;
+                width: 100%;
+                height: 50px;
+                background-color: $primary-color;
+
+                font-family: 'Segoe UI Light', sans-serif;
+                font-size: 1.3em;
+                color: #fff;
+                line-height: 1.2;
+                text-transform: uppercase;
+
+                -webkit-transition: all 0.4s ease-out;
+                -o-transition: all 0.4s ease-out;
+                -moz-transition: all 0.4s ease-out;
+                transition: all 0.4s ease-out;
+            }
+
+            .signup-form-btn:hover {
+                background-color: $secondary-color;
+            }
+
+        }
+
+    }
+}
+
+.container-signup {
+    width: 30px;
+    min-height: 20vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: $main-white;
+}
+
+.wrap-signup {
+    width: 500px;
+    background: $main-white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes full-w {
+    to {
+        width: calc(100% + 1px);
+    }
+}
+
+@keyframes full-h {
+    to {
+        height: calc(100% + 1px);
+    }
+}
