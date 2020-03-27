@@ -37,7 +37,7 @@ if (isset($_GET['logout'])){
 
 if (!isset($_SESSION["userid"])){
   echo '
-  <form action="user_handler.php" method="POST">
+  <form  class="login-form" action="user_handler.php" method="POST">
     <label for="inputUsername">Username</label>
     <input type="text" name="username" id="inputUsername">
     <label for="inputPassword">Password</label>
@@ -46,7 +46,7 @@ if (!isset($_SESSION["userid"])){
   </form>';
 }
 else {
-  echo '<form action = "user_handler.php" method = "GET">
+  echo '<form class="signout-button" action = "user_handler.php" method = "GET">
   <input type="hidden" name = "logout" value = "True">
   <input type="submit" value="Sign out">
   </form>';
