@@ -8,6 +8,7 @@
             <li><a class="menu-item" href="#">Customer Service</a></li>
             <li><a id="search" href="#"><i class="fa fa-search"></i></a></li>
             <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+            <li><?php include "user_handler.php" ?></li>
         </ul>
         <section class="search-form">
             <form>
