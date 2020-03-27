@@ -75,6 +75,7 @@ require '../inc/header.php';
     <h2>TODO:</h2>
     <ul>
         <li>Make it so that admin page can't add duplicate values</li>
+        <li>Fix hover on inputs in sign_up.php</li>
     </ul>
     <?php require '../inc/script.php'?>
     <?php include '../config/dbdisconnect.php'?>

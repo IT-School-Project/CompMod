@@ -44,16 +44,13 @@ is_numeric($_POST['post_nr'])){
 }
 ?>
 <?php require '../inc/header.php'?>
-  <body>
+  <body class="signup-body">
     <?php require '../inc/nav.php' ?>
-    <section class="limiter">
+      <section class="wrapper">
 
-      <section class="signup">
+        <h1 class="signup-form-title">Account Registration</h1>
 
         <form class="signup-form" action="sign_up.php" method="post">
-
-          <h1 class="signup-form-title">Account Registration</h1>
-
           <section class="wrap-input uname">
             <label for="inputUsername" class="login-form-title">Username</label>
             <input id="inputUsername" name="username" type="text" placeholder="TheLegend27">
@@ -109,7 +106,7 @@ is_numeric($_POST['post_nr'])){
           </section>
             
           <section class="wrap-input post_nr">
-            <label for="inputPost_nr">Postnummer</label>
+            <label for="inputPost_nr">Postal Code</label>
             <input 
               id="inputPost_nr"
               name="post_nr"
@@ -121,7 +118,7 @@ is_numeric($_POST['post_nr'])){
           </section>
           
           <section class="wrap-input address">
-            <label for="inputAddress">Addresse</label>
+            <label for="inputAddress">Address</label>
             <input 
               id="inputAddress"
               name="address"
@@ -133,7 +130,7 @@ is_numeric($_POST['post_nr'])){
           </section>
           
           <section class="wrap-input address2">
-            <label for="inputAddress2">Addresse 2</label>
+            <label for="inputAddress2">Address 2</label>
             <input 
               id="inputAddress2"
               name="address2"
@@ -145,23 +142,22 @@ is_numeric($_POST['post_nr'])){
           </section>
           
           <section class="wrap-input img">
-            <label for="inputImg">Profilbilde</label>
+            <label for="inputImg">Profile Picture</label>
             <input 
               id="inputImg"
               name="img"
               type="text"
-              placeholder="Required, but wip. Just write whatever text you want"
+              placeholder="Insert url"
             >
             <span class="focus-input-1"></span>
             <span class="focus-input-2"></span>
           </section>
           
-          <section class="container-signup-form-btn">
+          <section class="wrap-input">
             <button class="signup-form-btn">Sign Up</button>
           </section>
         </form>
       </section>
-    </section>
     <?php require '../inc/script.php'?>
   </body>
 </html>
