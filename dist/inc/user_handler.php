@@ -6,7 +6,7 @@ if (isset($_POST['password']) && isset($_POST['username'])){
   $password = $_POST['password'];
   $username = $_POST['username'];
   echo $password." ".$username." ";
-  
+
   $sql = "SELECT id, username, password FROM users WHERE username = \"$username\" AND password = SHA2(\"$password\",256)";# this works perfectly well in sql, dunno what the problem might be
   echo " ".$sql." ";
   $result = mysqli_query($conn, $sql);
@@ -27,10 +27,17 @@ if (isset($_POST['password']) && isset($_POST['username'])){
   }
 }
 
+if (isset($_GET['logout'])){
+  session_unset();
+  session_destroy();
+  
+  echo "successfully logged out.";
+}
+
 
 if (!isset($_SESSION["userid"])){
   echo '
-  <form action="sign_in.php" method="POST">
+  <form action="user_handler.php" method="POST">
     <label for="inputUsername">Username</label>
     <input type="text" name="username" id="inputUsername">
     <label for="inputPassword">Password</label>
@@ -39,8 +46,8 @@ if (!isset($_SESSION["userid"])){
   </form>';
 }
 else {
-  echo $_SESSION['userid'];
-  echo '<form action = "sign_out.php">
+  echo '<form action = "user_handler.php" method = "GET">
+  <input type="hidden" name = "logout" value = "True">
   <input type="submit" value="Sign out">
   </form>';
 }
