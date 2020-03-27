@@ -1,4 +1,4 @@
-
+<?php require '../config/dbconnect.php'?>
 
 
 <?php
@@ -161,3 +161,4 @@ is_numeric($_POST['post_nr'])){
     <?php require '../inc/script.php'?>
   </body>
 </html>
+<?php require '../config/dbdisconnect.php'?>
