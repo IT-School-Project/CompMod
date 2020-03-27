@@ -13,15 +13,20 @@ isset($_POST['category'])
 }
 
 if (
-isset($_POST['spec'])
-&& $_POST['spec'] != ""
-){
+(isset($_POST['spec'])
+&& $_POST['spec'] != "")
+&&($_POST['selecttype']
+&& $_POST['selecttype'] != "")){
+
+    $selecttype = $_POST['selecttype'];
     $spec = $_POST['spec'];
-    $sql = "INSERT INTO spec(spec,type) VALUES('$spec', 2)"; #TODO: dynamic type from dropdown menu
+    
+    $sql = "INSERT INTO spec(spec,type) VALUES('$spec', $selecttype)"; #TODO: dynamic type from dropdown menu
     $result = mysqli_query($conn, $sql);
     if (!$result){
         die("No result, spec");
     }
+
 }
 
 if (
@@ -56,6 +61,16 @@ require '../inc/header.php';
         <fieldset class="spec">
             <legend>Add spec:</legend>
             <input type="text" name="spec" id="spec">
+            <select name="selecttype" id="selecttype">
+                <?php
+                $sql2 = "SELECT id,name FROM type";
+                $result2 = mysqli_query($conn, $sql2);
+                while($row = mysqli_fetch_array($result2))
+                {
+                    echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                }
+                ?>
+            </select>
             <button type="submit">Submit</button>
         </fieldset>
 
