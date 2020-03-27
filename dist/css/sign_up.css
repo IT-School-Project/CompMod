@@ -72,7 +72,8 @@ button:hover {
       border: 1px solid #e6e6e6; }
       .limiter .signup .signup-form .wrap-input label {
         margin: 2px 0px 0px 2px;
-        font-family: 'Segoe UI Light', sans-serif; }
+        font-family: 'Segoe UI Light', sans-serif;
+        color: #0a5da6; }
       .limiter .signup .signup-form .wrap-input .focus-input-1,
       .limiter .signup .signup-form .wrap-input .focus-input-2 {
         display: block;

@@ -1,5 +1,4 @@
-<?php 
-require '../config/dbconnect.php';?>
+
 
 
 <?php
@@ -51,9 +50,9 @@ is_numeric($_POST['post_nr'])){
 
       <section class="signup">
 
-        <form class="signup" action="sign_up.php" method="post">
+        <form class="signup-form" action="sign_up.php" method="post">
 
-          <h1>Account Registration</h1>
+          <h1 class="signup-form-title">Account Registration</h1>
 
           <section class="wrap-input uname">
             <label for="inputUsername" class="login-form-title">Username</label>
@@ -157,8 +156,8 @@ is_numeric($_POST['post_nr'])){
             <span class="focus-input-2"></span>
           </section>
           
-          <section class="container-login-form-btn">
-            <button class="login-form-btn">Sign Up</button>
+          <section class="container-signup-form-btn">
+            <button class="signup-form-btn">Sign Up</button>
           </section>
         </form>
       </section>
@@ -166,4 +165,3 @@ is_numeric($_POST['post_nr'])){
     <?php require '../inc/script.php'?>
   </body>
 </html>
-<?php require '../config/dbdisconnect.php' ?>

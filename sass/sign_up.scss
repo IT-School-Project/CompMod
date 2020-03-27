@@ -75,6 +75,7 @@ button:hover {
             margin-top: -31vh;
             margin-left: -8vw;
 
+
             .signup-form-title {
                 display: block;
                 font-family: 'Segoe UI Light', sans-serif;
@@ -93,6 +94,7 @@ button:hover {
                 label {
                     margin: 2px 0px 0px 2px;
                     font-family: 'Segoe UI Light', sans-serif;
+                    color: $primary-color;
                 }
 
                 .focus-input-1,
