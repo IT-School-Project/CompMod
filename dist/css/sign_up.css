@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI Light", sans-serif;
-  background: #f2e0dc; }
+  background: #f2e0dc;
+  text-decoration: none; }
   .signup-body .wrapper {
     max-width: 500px;
     width: 100%;

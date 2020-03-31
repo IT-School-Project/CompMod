@@ -1,10 +1,119 @@
 @import "../dist/inc/vars.scss";
 
-body,
-html {
+.navbar {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI Light', sans-serif;
-  overflow: hidden;
-  height: 100%;
+  font-family: "Segoe UI Light", sans-serif;
+  box-sizing: border-box;
+  height: 80px;
+  width: 100vw;
+  background: $primary-color;
+
+  .dropdown {
+    position: absolute;
+
+    .dd-menu {
+      position: relative;
+      font-size: 30px;
+      background: $primary-color;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      z-index: 50;
+      margin: 0 20px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      position: absolute;
+      margin-top: 22px;
+      padding: 0;
+      width: 100%;
+      background: #fff;
+      transform-origin: top;
+      transform: perspective(1000px) rotateX(-90deg);
+      transition: 0.5s;
+
+      li {
+        list-style: none;
+
+        :hover {
+          background: $primary-color;
+          color: #fff;
+          transition: 0.5s all ease-out;
+        }
+
+        a {
+          display: block;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          background: #fff;
+          color: $primary-color;
+          font-size: 16px;
+        }
+      }
+    }
+
+    ul.active {
+      transform: perspective(1000px) rotateX(0deg);
+    }
+
+    img {
+      margin-top: 25px;
+    }
+  }
+}
+
+.search {
+  margin: auto;
+  width: 100%;
+  max-width: 40vw;
+  text-align: center;
+  height: 80px;
+  position: relative;
+
+  .seacrh-form {
+    width: 100%;
+  }
+
+  input[type=text] {
+    width: 95%;
+    height: 32px;
+    font-size: 0.9em;
+    margin-top: 20px;
+    background: transparent;
+    border: solid 2px #fff;
+    border-radius: 8px;
+    padding: 0 5px;
+    color: #fff;
+  }
+
+  input[type=text]::placeholder {
+    color: #fff;
+  }
+
+  input[type=text]:focus {
+    outline: none;
+  }
+
+  .icon {
+    cursor: pointer;
+    position: absolute;
+    top: 46%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 3%;
+    color: #fff;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .navbar {
+    .search {
+      max-width: 679.61px;
+    }
+  }
 }

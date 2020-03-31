@@ -3,4 +3,4 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 
-  <script src="../js/navbar.js"></script>
+  <script src="../js/nav.js"></script>

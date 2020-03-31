@@ -1,7 +1,85 @@
-body,
-html {
+.navbar {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI Light', sans-serif;
-  overflow: hidden;
-  height: 100%; }
+  font-family: "Segoe UI Light", sans-serif;
+  box-sizing: border-box;
+  height: 80px;
+  width: 100vw;
+  background: #0a5da6; }
+  .navbar .dropdown {
+    position: absolute; }
+    .navbar .dropdown .dd-menu {
+      position: relative;
+      font-size: 30px;
+      background: #0a5da6;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+      color: #fff;
+      z-index: 50;
+      margin: 0 20px;
+      margin-bottom: 20px; }
+    .navbar .dropdown ul {
+      position: absolute;
+      margin-top: 22px;
+      padding: 0;
+      width: 100%;
+      background: #fff;
+      transform-origin: top;
+      transform: perspective(1000px) rotateX(-90deg);
+      transition: 0.5s; }
+      .navbar .dropdown ul li {
+        list-style: none; }
+        .navbar .dropdown ul li :hover {
+          background: #0a5da6;
+          color: #fff;
+          transition: 0.5s all ease-out; }
+        .navbar .dropdown ul li a {
+          display: block;
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          background: #fff;
+          color: #0a5da6;
+          font-size: 16px; }
+    .navbar .dropdown ul.active {
+      transform: perspective(1000px) rotateX(0deg); }
+    .navbar .dropdown img {
+      margin-top: 25px; }
+
+.search {
+  margin: auto;
+  width: 100%;
+  max-width: 40vw;
+  text-align: center;
+  height: 80px;
+  position: relative; }
+  .search .seacrh-form {
+    width: 100%; }
+  .search input[type=text] {
+    width: 95%;
+    height: 32px;
+    font-size: 0.9em;
+    margin-top: 20px;
+    background: transparent;
+    border: solid 2px #fff;
+    border-radius: 8px;
+    padding: 0 5px;
+    color: #fff; }
+  .search input[type=text]::placeholder {
+    color: #fff; }
+  .search input[type=text]:focus {
+    outline: none; }
+  .search .icon {
+    cursor: pointer;
+    position: absolute;
+    top: 46%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 3%;
+    color: #fff; }
+
+@media only screen and (min-width: 1800px) {
+  .navbar .search {
+    max-width: 679.61px; } }
