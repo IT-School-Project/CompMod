@@ -18,7 +18,7 @@
     </section>
     <section>
         <ul class="navbar-right">
-            <li><a class="button" href="../php/user_handler.php">Login</a></li>
+            <li><a class="button" href="../inc/user_handler.php">Login</a></li>
             <li><a class="button" href="../php/sign_up.php">Signup</a></li>
             <li><a href=""><i class="fa fa-shopping-basket"></i></a></li>
         </ul>
