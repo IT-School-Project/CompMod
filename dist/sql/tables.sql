@@ -23,8 +23,7 @@ CREATE TABLE listing (
     price FLOAT NOT NULL,
     date DATETIME NOT NULL,
     description TEXT NOT NULL,
-    user INTEGER NOT NULL,
-    parts INTEGER NOT NULL
+    user INTEGER NOT NULL
 );
 
 -- IMPORT TABLE post_nr
