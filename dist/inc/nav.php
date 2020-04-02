@@ -1,11 +1,11 @@
 <nav class="navbar">
     <section class="dropdown">
         <a class="dd-menu"><i class="fa fa-bars"></i></a>
-        <ul class="dropdown">
-            <li><a href="">Home</a></li>
-            <li><a href="../php/store.php">Store</a></li>
-            <li><a href="">Wishlist</a></li>
-            <li><a href="">Contact</a></li>
+        <ul class="dropdown_list">
+            <li class="list-item"><a href="">Home</a></li>
+            <li class="list-item"><a href="../php/store.php">Store</a></li>
+            <li class="list-item"><a href="">Wishlist</a></li>
+            <li class="list-item"><a href="">Contact</a></li>
         </ul>
         <img class="logo" src="../img/logo.png" alt="">
     </section>
@@ -16,11 +16,13 @@
             <a onclick="this.closest('form').submit();return false;"><i class="icon fa fa-search"></i></a>
         </form>
     </section>
-    <section>
-        <ul class="navbar-right">
-            <li><a class="button" href="../php/user_handler.php">Login</a></li>
-            <li><a class="button" href="../php/sign_up.php">Signup</a></li>
-            <li><a href=""><i class="fa fa-shopping-basket"></i></a></li>
-        </ul>
+    <section class="nav-outer">
+        <section class="table">
+            <ul class="navbar-right">
+                <li class="login"><a class="button" href="../inc/user_handler.php">Login</a></li>
+                <li class="signup"><a class="button" href="../php/sign_up.php">Sign up</a></li>
+                <li class="cart"><a href=""><i class="fa fa-shopping-basket"></i></a></li>
+            </ul>
+        </section>
     </section>
 </nav>
