@@ -1,11 +1,17 @@
 @import "../dist/inc/vars.scss";
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI Light", sans-serif;
   box-sizing: border-box;
-  height: 80px;
+  height: 81px;
   width: 100vw;
   background: $primary-color;
 
@@ -33,11 +39,12 @@
       width: 100%;
       background: #fff;
       transform-origin: top;
-      transform: perspective(1000px) rotateX(-90deg);
-      transition: 0.5s;
+      visibility: hidden;
 
       li {
         list-style: none;
+        transform: translate3d(-600px, 0, 0);
+        transition: all 0.1s ease-out;
 
         :hover {
           background: $primary-color;
@@ -58,7 +65,11 @@
     }
 
     ul.active {
-      transform: perspective(1000px) rotateX(0deg);
+      visibility: visible;
+
+      li {
+        transform: translate3d(0, 0, 0);
+      }
     }
 
     img {
@@ -68,34 +79,36 @@
 }
 
 .search {
-  margin: auto;
+  margin: 0;
   width: 100%;
   max-width: 40vw;
   text-align: center;
   height: 80px;
   position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
   .seacrh-form {
     width: 100%;
   }
 
-  input[type=text] {
+  input[type="text"] {
     width: 95%;
     height: 32px;
     font-size: 0.9em;
     margin-top: 20px;
     background: transparent;
-    border: solid 2px #fff;
+    border: solid 2px $white;
     border-radius: 8px;
     padding: 0 5px;
-    color: #fff;
+    color: $white;
   }
 
-  input[type=text]::placeholder {
-    color: #fff;
+  input[type="text"]::placeholder {
+    color: $white;
   }
 
-  input[type=text]:focus {
+  input[type="text"]:focus {
     outline: none;
   }
 
@@ -106,7 +119,105 @@
     right: 0;
     transform: translateY(-50%);
     margin-right: 3%;
-    color: #fff;
+    color: $white;
+  }
+}
+
+.nav-outer {
+  top: 46%;
+  float: right;
+  transform: translateY(-100%);
+  width: 100%;
+  max-width: 30vw;
+  height: 100%;
+
+  .table {
+    width: 100%;
+    height: 100%;
+    display: table;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .navbar-right {
+      height: 100%;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      top: 10%;
+
+      li {
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          color: $white;
+          font-size: 1.2em;
+        }
+      }
+
+      .login {
+        margin-right: 3%;
+        top: 50%;
+        left: 0%;
+        transform: translateY(90%);
+
+        a {
+          width: 10%;
+          border: solid 2px $white;
+          padding: 6px 15px;
+          border-radius: 8px;
+          font-weight: 400;
+        }
+
+        a:hover {
+          color: $primary-color;
+          background: $white;
+          transition: 0.3s ease-out;
+          font-weight: 600;
+          padding: 8px 22px;
+        }
+      }
+    }
+
+    .signup {
+      margin: 0 20% 0 3%;
+      top: 50%;
+      left: 0%;
+      transform: translateY(90%);
+
+      a {
+        width: 10%;
+        padding: 6px 15px;
+        border: solid 2px $white;
+        border-radius: 8px;
+      }
+
+      a:hover {
+        color: $primary-color;
+        background: $white;
+        transition: 0.3s ease-out;
+      }
+    }
+
+    .cart {
+      float: right;
+      margin-right: 6%;
+      top: 50%;
+      left: 0%;
+      transform: translateY(90%);
+
+      a {
+        text-decoration: none;
+        color: $white;
+        font-size: 1.3em;
+      }
+    }
   }
 }
 
