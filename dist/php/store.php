@@ -6,6 +6,9 @@
         <input type = "hidden" name = "new" value = "true">
         <input type = "submit" value = "sell an item">
     </form>
+    <section class="wrapper">
+        
+    </section>
     <?php require '../inc/script.php'?>
 </body>
 </html>
