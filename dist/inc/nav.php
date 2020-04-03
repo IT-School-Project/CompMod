@@ -19,10 +19,27 @@
     <section class="nav-outer">
         <section class="table">
             <ul class="navbar-right">
-                <li class="login"><a class="button" href="../inc/user_handler.php">Login</a></li>
+                <li class="login"><a id="button" href="#">Login</a></li>
                 <li class="signup"><a class="button" href="../php/sign_up.php">Sign up</a></li>
                 <li class="cart"><a href=""><i class="fa fa-shopping-basket"></i></a></li>
             </ul>
+        </section>
+    </section>
+    <section class="popup">
+        <section class="popup-content">
+            <img src="../img/cross.png" alt="" class="close">
+            <img src="../img/user.png" alt="User" class="user">
+            <form method="post">
+                <fieldset class="username">
+                    <legend>Username:</legend>
+                    <input type="text" placeholder="TheLegend27" name="username" id="inputUsername">
+                </fieldset>
+                <fieldset class="password">
+                    <legend>Password:</legend>
+                    <input type="password" placeholder="Hunter2" name="password" id="inputPassword">
+                </fieldset>
+            </form>
+            <a href="#" class="button">Login</a>
         </section>
     </section>
 </nav>
