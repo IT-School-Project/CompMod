@@ -1,4 +1,5 @@
-
+<?php
+require '../config/dbconnect.php'?>
 
 <?php
 if (( 
@@ -53,8 +54,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input uname">
             <label for="inputUsername" class="login-form-title">Username</label>
             <input id="inputUsername" name="username" type="text" placeholder="TheLegend27">
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
           
           <section class="wrap-input pwd">
@@ -65,8 +65,7 @@ is_numeric($_POST['post_nr'])){
               type="password"
               placeholder="Hunter2"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
 
           <section class="wrap-input email">
@@ -77,8 +76,7 @@ is_numeric($_POST['post_nr'])){
               type="text"
               placeholder="yourname@email.com"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
           
           <section class="wrap-input fname">
@@ -89,8 +87,7 @@ is_numeric($_POST['post_nr'])){
               type="text"
               placeholder="John"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
 
           <section class="wrap-input sname">
@@ -100,8 +97,7 @@ is_numeric($_POST['post_nr'])){
               name="surname"
               type="text"
               placeholder="Doe">
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+           
           </section>
             
           <section class="wrap-input post_nr">
@@ -112,8 +108,7 @@ is_numeric($_POST['post_nr'])){
               type="text"
               placeholder="1337"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
           
           <section class="wrap-input address">
@@ -124,8 +119,7 @@ is_numeric($_POST['post_nr'])){
               type="text"
               placeholder="42 Wallaby Way, Sydney"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
           
           <section class="wrap-input address2">
@@ -136,8 +130,7 @@ is_numeric($_POST['post_nr'])){
               type="text"
               placeholder="Not required"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
+            
           </section>
           
           <section class="wrap-input img">
@@ -148,8 +141,6 @@ is_numeric($_POST['post_nr'])){
               type="text"
               placeholder="Insert url"
             >
-            <span class="focus-input-1"></span>
-            <span class="focus-input-2"></span>
           </section>
           
           <section class="wrap-input">
@@ -160,3 +151,4 @@ is_numeric($_POST['post_nr'])){
     <?php require '../inc/script.php'?>
   </body>
 </html>
+<?php require '../config/dbdisconnect.php'?>
