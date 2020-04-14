@@ -123,7 +123,8 @@ body {
           margin-right: 3%;
           top: 50%;
           left: 0%;
-          transform: translateY(90%); }
+          transform: translateY(90%);
+          z-index: 5; }
           .navbar .nav-outer .table .navbar-right .login a {
             width: 10%;
             border: solid 2px white;
@@ -140,7 +141,8 @@ body {
         margin: 0 20% 0 3%;
         top: 50%;
         left: 0%;
-        transform: translateY(90%); }
+        transform: translateY(90%);
+        z-index: 5; }
         .navbar .nav-outer .table .signup a {
           width: 10%;
           padding: 6px 15px;

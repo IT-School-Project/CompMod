@@ -165,6 +165,7 @@ body {
           top: 50%;
           left: 0%;
           transform: translateY(90%);
+          z-index: 5;
 
           a {
             width: 10%;
@@ -189,6 +190,7 @@ body {
         top: 50%;
         left: 0%;
         transform: translateY(90%);
+        z-index: 5;
 
         a {
           width: 10%;
