@@ -60,13 +60,8 @@ CREATE TABLE xparts (
 
 CREATE TABLE parts (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE xcategory (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    category_id INTEGER NOT NULL,
-    parts_id INTEGER NOT NULL
+    name VARCHAR(255) NOT NULL,
+    cat_id INTEGER
 );
 
 CREATE TABLE category (
