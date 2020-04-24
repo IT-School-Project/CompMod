@@ -25,19 +25,27 @@
             </ul>
         </section>
     </section>
+
+    <?php require '../config/dbconnect.php';?>
+    
     <section class="popup">
-        <section class="popup-content">
-            <img src="../img/cross.png" alt="" class="close">
-            <img src="../img/user.png" alt="User" class="user">
-            <form method="post">
-                <fieldset class="username">
-                    <legend>Username:</legend>
-                    <input type="text" placeholder="TheLegend27" name="username" id="inputUsername">
-                </fieldset>
-                <fieldset class="password">
-                    <legend>Password:</legend>
-                    <input type="password" placeholder="Hunter2" name="password" id="inputPassword">
-                </fieldset>
+        <section class="wrapper">
+            <h2>Login</h2>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                <section class="form-group">>
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-control">
+                    <span class="help-block"></span>
+                </section>
+                <section class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control">
+                    <span class="help-block"></span>
+                </section>
+                <section class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </section>
+                <p>Don't have an account? <a href="../php/sign_up.php">Sign up</a>.</p>
             </form>
             <a href="#" class="button">Login</a>
         </section>
