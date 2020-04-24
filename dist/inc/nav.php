@@ -47,7 +47,6 @@
                 </section>
                 <p>Don't have an account? <a href="../php/sign_up.php">Sign up</a>.</p>
             </form>
-            <a href="#" class="button">Login</a>
         </section>
     </section>
 </nav>
