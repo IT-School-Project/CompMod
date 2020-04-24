@@ -19,6 +19,14 @@ if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']
 if(isset($_POST['category']) && isset($_POST['partName'])){
   $category = $_POST['category'];
   $partName = $_POST['partName'];
+  for ($i=0; $i<count($category)-1;$i++){
+    $c = $category[$i];
+    $p = $partName[$i];
+    $sqlCheck = "SELECT id FROM category WHERE category = '$c'";
+    $resultCheck = mysqli_query($conn, $sqlCheck);
+    $row = mysqli_fetch_assoc($resultCheck);
+    echo $row['id'];
+  }
 }
 ?>
 <body>
