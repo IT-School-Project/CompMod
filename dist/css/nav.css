@@ -86,7 +86,7 @@ body {
       top: 46%;
       right: 0;
       transform: translateY(-50%);
-      margin-right: 3%;
+      margin-right: 4%;
       color: white; }
   .navbar .nav-outer {
     top: 46%;
@@ -94,7 +94,8 @@ body {
     transform: translateY(-100%);
     width: 100%;
     max-width: 30vw;
-    height: 100%; }
+    height: 100%;
+    background: transparent; }
     .navbar .nav-outer .table {
       width: 100%;
       height: 100%;
@@ -104,15 +105,17 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-align: center; }
+      text-align: center;
+      background: transparent; }
       .navbar .nav-outer .table .navbar-right {
-        height: 100%;
+        height: 80px;
         width: 100%;
         list-style: none;
         padding: 0;
         margin: 0;
         overflow: hidden;
-        top: 10%; }
+        top: 10%;
+        z-index: 5; }
         .navbar .nav-outer .table .navbar-right li {
           display: inline-block; }
           .navbar .nav-outer .table .navbar-right li a {
@@ -124,7 +127,7 @@ body {
           top: 50%;
           left: 0%;
           transform: translateY(90%);
-          z-index: 5; }
+          z-index: 500; }
           .navbar .nav-outer .table .navbar-right .login a {
             width: 10%;
             border: solid 2px white;
@@ -142,7 +145,7 @@ body {
         top: 50%;
         left: 0%;
         transform: translateY(90%);
-        z-index: 5; }
+        z-index: 500; }
         .navbar .nav-outer .table .signup a {
           width: 10%;
           padding: 6px 15px;
