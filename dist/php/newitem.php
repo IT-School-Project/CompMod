@@ -1,17 +1,23 @@
 <?php 
 require '../config/dbconnect.php';
 require '../inc/header.php';
+session_start();
 
 if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']) && isset($_POST['description']) && is_numeric($_POST['price'])){
   $userid = $_SESSION['userid'];
   $title = $_POST['title'];
   $price = $_POST['price'];
   $description = $_POST['description'];
-
   echo $userid.$title.$price.$description;
 
   $sql = "INSERT INTO listing(name,price,date,description,user) VALUES ('$title', $price, NOW(), '$description', $userid)";
   $result = mysqli_query($conn, $sql);
+  
+  $sql = "SELECT MAX(id) FROM listing";
+  $result = mysqli_query($conn, $sql);
+  $row = mysqli_fetch_assoc($result);
+  $listing_id = $row['id'];
+  echo $listing_id;
 }
 
 
@@ -19,20 +25,21 @@ if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']
 if(isset($_POST['category']) && isset($_POST['partName'])){
   $category = $_POST['category'];
   $partName = $_POST['partName'];
-  for ($i=0; $i<count($category)-1;$i++){
+  for ($i=0; $i<count($category);$i++){
     $c = $category[$i];
     $p = $partName[$i];
     $sqlCheck = "SELECT id FROM category WHERE category = '$c'";
     $resultCheck = mysqli_query($conn, $sqlCheck);
     $row = mysqli_fetch_assoc($resultCheck);
-    echo $row['id'];
+    $cat_id = $row['id'];
+    $sql = "INSERT INTO parts(name, cat_id) VALUES('$p', $cat_id)";
+    $result = mysqli_query($conn,$sql);
   }
 }
 ?>
 <body>
   <?php require '../inc/nav.php'?>
   <form id = "listing" method = "POST">
-
     <label for="inputTitle">Title</label>
     <input 
       id="inputTitle"
@@ -111,7 +118,7 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
       }
   </script> 
   <input type="button" value="Add" onclick="addInput('listing');" />
-  <input type = "submit">
+  <input type = "submit" value="Submit">
 
 
   </form>
