@@ -1,3 +1,9 @@
+<script>    
+    if(typeof window.history.pushState == 'function') {
+        window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
+    }
+</script>
+
 <?php
 session_start();
 
@@ -33,23 +39,13 @@ if (isset($_GET['logout'])){
 
 if (!isset($_SESSION["userid"])){
   echo '
-  <section class="popup">
-        <section class="popup-content">
-            <img src="../img/cross.png" alt="" class="close">
-            <img src="../img/user.png" alt="User" class="user">
-            <form method="post">
-                <fieldset class="username">
-                    <legend>Username:</legend>
-                    <input type="text" placeholder="TheLegend27" name="username" id="inputUsername">
-                </fieldset>
-                <fieldset class="password">
-                    <legend>Password:</legend>
-                    <input type="password" placeholder="Hunter2" name="password" id="inputPassword">
-                </fieldset>
-            </form>
-            <a href="#" class="button">Login</a>
-        </section>
-    </section>';
+  <form method="POST">
+    <label for="inputUsername">Username</label>
+    <input type="text" name="username" id="inputUsername">
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword">
+    <input type="submit">
+  </form>';
 }
 else {
   echo '<form method = "GET">
@@ -58,4 +54,3 @@ else {
   </form>';
 }
 ?>
-<script src="../js/login.js"></script>
