@@ -51,10 +51,11 @@
                     padding: 8px 10px;
                     border-radius: 3px;
                     transition: all 0.3s ease;
-                }
 
-                input:focus {
-                    background: #eee;
+                    &:focus {
+                        background: #eee;
+                    }
+    
                 }
 
                 .signup-form-btn {
