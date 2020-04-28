@@ -28,6 +28,9 @@
         <li class="login">
             
         </li>
+        <li class="login">
+            <?php require 'user_handler.php';?>
+        </li>
         <li class="signup">
             <a class="button" href="../php/sign_up.php">Sign up</a>
         </li>
