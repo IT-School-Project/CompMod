@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 if (isset($_POST['password']) && isset($_POST['username'])){
   require '../config/dbconnect.php';
@@ -33,10 +33,6 @@ if (isset($_GET['logout'])){
 
 if (!isset($_SESSION["userid"])){
   echo '
-  <section class="popup">
-        <section class="popup-content">
-            <img src="../img/cross.png" alt="" class="close">
-            <img src="../img/user.png" alt="User" class="user">
             <form method="post">
                 <fieldset class="username">
                     <legend>Username:</legend>
@@ -58,4 +54,3 @@ else {
   </form>';
 }
 ?>
-<script src="../js/login.js"></script>
