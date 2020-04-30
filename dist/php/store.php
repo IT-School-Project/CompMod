@@ -1,10 +1,22 @@
 <?php require '../config/dbconnect.php';
 require '../inc/header.php';
 
-$sql = "SELECT l.id, l.name, l.price, l.img, u.post_nr, u.address1
-FROM listing l, users u
-WHERE l.user = u.id
-ORDER BY l.date";
+if(isset($_GET['search'])){
+    $search = $_GET['search'];
+    $sql = "SELECT l.id, l.name, l.price, l.img, u.post_nr, u.address1
+    FROM listing l, users u
+    WHERE l.user = u.id
+    AND l.name LIKE '%$search%'
+    ORDER BY l.date DESC 
+    LIMIT 16";
+}
+else{
+    $sql = "SELECT l.id, l.name, l.price, l.img, u.post_nr, u.address1
+    FROM listing l, users u
+    WHERE l.user = u.id
+    ORDER BY l.date DESC 
+    LIMIT 16";
+}
 $result = mysqli_query($conn,$sql);
 ?>
 <body class="store-body">
@@ -26,7 +38,10 @@ $result = mysqli_query($conn,$sql);
             }
             ?>
         </section>
-    </section>
-    <?php require '../inc/script.php'?>
+        </a>";
+    }
+    ?>
+    <?php require '../inc/script.php';
+    require '../config/dbdisconnect.php';?>
 </body>
 </html>
