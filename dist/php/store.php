@@ -9,17 +9,13 @@ $result = mysqli_query($conn,$sql);
 ?>
 <body>
     <?php require '../inc/nav.php'?>
-    <form action = "newitem.php" method = "POST">
-        <input type = "hidden" name = "new" value = "true">
-        <input type = "submit" value = "sell an item">
-    </form>
     <?php
     while ($row = mysqli_fetch_array($result)){
         echo "
         <a href = 'listing.php?id=".$row['id']."'>
         <section class = 'listing'>
             <h3>".$row['name']."</h3>
-            <img src='".$row['img']."' alt='placeholder image' height = '200' width = '200'>
+            <img src='../img/placeholder.png' alt='placeholder image' height = '200' width = '200'>
             <p class = 'price'>" .$row['price']."kr</p>
             <p class = 'address'>".$row['post_nr'].", ".$row['address1']."</p>
         </section>
