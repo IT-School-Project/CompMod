@@ -61,6 +61,7 @@ while($row = mysqli_fetch_array($result))
         echo "<li><section class = 'category'>". $cats[$i] . ": </section><section class = 'part'>". $parts[$i]."</section></li>";
       }
       require '../config/dbdisconnect.php';
+      require '../inc/script.php';
       ?>
     </ul>
   </section>
