@@ -47,7 +47,7 @@ if (!isset($_SESSION["userid"])){
 else {
   echo '
   <li class="nav-item">
-    <form class="nav-form" method = "GET">
+    <form class="nav-form" method = "POST">
       <input type="hidden" name = "logout" value = "True">
       <input class="nav-button" type="submit" value="Sign out">
     </form>
