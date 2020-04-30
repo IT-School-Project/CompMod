@@ -38,27 +38,29 @@ while($row = mysqli_fetch_array($result))
 ?>
 
 <body>
-  <h1 class = 'title'><?php echo $listing_name;?></h1>
-  <img src="../img/placeholder.png" alt="placeholder">
-  <p class = 'date'><?php echo $listing_date?></p>
-  <h4>Beskrivelse</h4>
-  <p class = 'description'><?php echo $listing_desc;?></p>
-  <h4 class = 'pris'>Pris</h4>
-  <p><?php echo $listing_price;?>kr</p>
-  <h2>Kontaktinformasjon: </h2>
-  <ul>
-    <li><p>Navn: <?php echo $user_name;?></p></li>
-    <li><p>Postnummer: <?php echo $user_post;?><p></li>
-    <li><p>Addresse: <?php echo $user_address;?><p></li>
-    <li><p>Email: <?php echo $user_email;?></p></li>
-  </ul>
-  <h2>Deler: </h2>
-  <ul>
-    <?php 
-    for ($i = 0; $i < count($parts); $i++){
-      echo "<li><section class = 'category'>". $cats[$i] . ": </section><section class = 'part'>". $parts[$i]."</section></li>";
-    }
-    ?>
-  </ul>
+  <section class="listing-container">
+    <h1 class = 'title'><?php echo $listing_name;?></h1>
+    <img src="../img/placeholder.png" alt="placeholder">
+    <p class = 'date'><?php echo $listing_date?></p>
+    <h4>Beskrivelse</h4>
+    <p class = 'description'><?php echo $listing_desc;?></p>
+    <h4 class = 'pris'>Pris</h4>
+    <p><?php echo $listing_price;?>kr</p>
+    <h2>Kontaktinformasjon: </h2>
+    <ul>
+      <li><p>Navn: <?php echo $user_name;?></p></li>
+      <li><p>Postnummer: <?php echo $user_post;?><p></li>
+      <li><p>Addresse: <?php echo $user_address;?><p></li>
+      <li><p>Email: <?php echo $user_email;?></p></li>
+    </ul>
+    <h2>Deler: </h2>
+    <ul>
+      <?php 
+      for ($i = 0; $i < count($parts); $i++){
+        echo "<li><section class = 'category'>". $cats[$i] . ": </section><section class = 'part'>". $parts[$i]."</section></li>";
+      }
+      ?>
+    </ul>
+  </section>
 </body>
 </html>

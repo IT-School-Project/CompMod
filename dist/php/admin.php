@@ -52,7 +52,7 @@ if (isset($_SESSION['userid'])){
             }
         }
         
-        require "..\inc\admin_html.php";
+        require "../inc/admin_html.php";
     }
 
     else{

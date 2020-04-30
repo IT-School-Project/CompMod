@@ -51,23 +51,6 @@
     }
 }
 
-.cart-btn {
-    position: absolute;
-    z-index: 3;
-    right: 35px;
-    top: 35px;
-    cursor: pointer;
-    
-    a {
-        text-decoration: none;
-
-        .fa-shopping-basket {
-
-            font-size: 26px;
-            color: $primary-color;
-        }
-    }
-}
 
 // Menu OVerlay
 .menu {
@@ -187,7 +170,7 @@
 
             .nav-button {
                 height: 40px;
-                width: 100px;
+                width: 120px;
                 background: $primary-color;
                 color: $white;
                 outline: none;
@@ -199,10 +182,11 @@
                 -o-border-radius: 3px;
                 font-size: 16px;
                 cursor: pointer;
+                padding: 2px 5px;
 
                 &:hover {
                     height: 45px;
-                    width: 110px;
+                    width: 130px;
                     font-size: 18px;
                     transition: all 0.3s ease-out;
                     -webkit-transition: all 0.3s ease-out;
@@ -211,15 +195,23 @@
                     -o-transition: all 0.3s ease-out;
                 }
             }
+
+            .sell-item {
+                margin-top: 20px;
+            }
         }
 
         .search-form {
             margin-bottom: 20px;
 
+            .nav-input {
+                padding: 2px 5px;
+            }
+
             .fa-search {
                 position: absolute;
                 top: 5px;
-                right: 5px;
+                right: 8px;
                 font-size: 24px;
                 cursor: pointer;
                 color: $primary-color;
@@ -245,7 +237,7 @@
 }
 
 // Delay Each Nav ITem Slide By 0.1 Second
-@for $x from 1 through 7 {
+@for $x from 1 through 8 {
     .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
     }

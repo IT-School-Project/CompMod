@@ -27,6 +27,18 @@ $favcon: url(../dist/img/favcon_big.png);
 @mixin mediaSm {
     @media screen and (max-width: 500px) {
         @content;
+        .wrapper .form .inputfield {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    
+        .wrapper .form .inputfield label {
+            margin-bottom: 5px;
+        }
+    
+        .wrapper .form .inputfield.terms {
+            flex-direction: row;
+        }
     }
 }
 

@@ -7,25 +7,26 @@ WHERE l.user = u.id
 ORDER BY l.date";
 $result = mysqli_query($conn,$sql);
 ?>
-<body>
+<body class="store-body">
     <?php require '../inc/nav.php'?>
-    <?php
-    while ($row = mysqli_fetch_array($result)){
-        echo "
-        <a href = 'listing.php?id=".$row['id']."'>
-        <section class = 'listing'>
-            <h3>".$row['name']."</h3>
-<<<<<<< HEAD
-            <img src='../img/placeholder.png' alt='placeholder image' height = '200' width = '200'>
-=======
-            <img src='".$row['img']."' onerror='this.src=\"../img/placeholder.png\"' alt='placeholder image' height = '200' width = '200'>
->>>>>>> 20fb48003d713b0e1a71dcb4aec5e1b3f880386e
-            <p class = 'price'>" .$row['price']."kr</p>
-            <p class = 'address'>".$row['post_nr'].", ".$row['address1']."</p>
+    <section class="space"></section>
+    <section class="container">
+        <section class="item">
+            <?php
+            while ($row = mysqli_fetch_array($result)){
+                echo "
+                    <section class = 'listing'>
+                        <a href = 'listing.php?id=".$row['id']."'>
+                            <h3>".$row['name']."</h3>
+                            <img src='".$row['img']."' onerror='this.src=\"../img/placeholder.png\"' alt='placeholder image' height = '200' width = '200'>
+                            <p class = 'price'>Pris: ".$row['price']."kr</p>
+                            <p class = 'address'>Addresse: ".$row['post_nr'].", ".$row['address1']."</p>
+                        </a>
+                    </section>";
+            }
+            ?>
         </section>
-        </a>";
-    }
-    ?>
+    </section>
     <?php require '../inc/script.php'?>
 </body>
 </html>

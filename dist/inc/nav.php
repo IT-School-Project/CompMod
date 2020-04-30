@@ -4,10 +4,6 @@
         <section class="btn-line"></section>
         <section class="btn-line"></section>
     </section>
-
-    <section class="cart-btn">
-        <a href="#"><i class="fa fa-shopping-basket"></i></a>
-    </section>
     
     <nav class="menu">
         <ul class="menu-nav">
@@ -19,6 +15,12 @@
             </li>
             <li class="nav-item">
                 <?php require 'user_handler.php';?>
+            </li>
+            <li class="nav-item">
+                <form class="nav-form" action = "newitem.php" method = "POST">
+                    <input type = "hidden" name = "new" value = "true">
+                    <input class="nav-button sell-item" type = "submit" value = "Sell Item">
+                </form>
             </li>
             <li class="nav-item">
                 <a href="../php/store.php" class="nav-link link">Store</a>
