@@ -11,8 +11,7 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL,
     address1 VARCHAR(255) NOT NULL,
     address2 VARCHAR(255),
-    post_nr INTEGER NOT NULL,
-    img INTEGER NOT NULL
+    post_nr INTEGER NOT NULL
 );
 
 --if profile picture is not provided. automatically make it a basic one 
@@ -23,7 +22,8 @@ CREATE TABLE listing (
     price FLOAT NOT NULL,
     date DATETIME NOT NULL,
     description TEXT NOT NULL,
-    user INTEGER NOT NULL
+    user INTEGER NOT NULL,
+    img VARCHAR(31)
 );
 
 -- IMPORT TABLE post_nr
