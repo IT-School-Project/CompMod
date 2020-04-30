@@ -3,7 +3,7 @@ require '../inc/header.php';
 require '../inc/nav.php';
 require '../config/dbconnect.php';
 $listing_id = $_GET['id'];
-$sql = "SELECT l.name, l.price, l.date, l.description, u.first_name, u.surname, u.email, u.post_nr, u.address1
+$sql = "SELECT l.name, l.price, l.date, l.description, l.img, u.first_name, u.surname, u.email, u.post_nr, u.address1
 FROM listing l, users u
 WHERE l.user = u.id
 AND l.id = $listing_id"; 
@@ -15,6 +15,7 @@ $listing_name = $row['name'];
 $listing_price = $row['price'];
 $listing_desc = $row['description'];
 $listing_date = $row['date'];
+$listing_img = $row['img'];
 $user_name = $row['first_name'] . " " . $row['surname'];
 $user_email = $row['email'];
 $user_post = $row['post_nr'];
@@ -39,7 +40,7 @@ while($row = mysqli_fetch_array($result))
 
 <body>
   <h1 class = 'title'><?php echo $listing_name;?></h1>
-  <img src="../img/placeholder.png" alt="placeholder">
+  <img src='<?php echo $listing_img;?>' onerror='this.src="../img/placeholder.png"' alt='placeholder image'>
   <p class = 'date'><?php echo $listing_date?></p>
   <h4>Beskrivelse</h4>
   <p class = 'description'><?php echo $listing_desc;?></p>

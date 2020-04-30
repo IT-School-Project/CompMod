@@ -27,10 +27,10 @@
                 <a href="../php/sign_up.php" class="nav-link link">Sign up</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link link">Contact</a>
+                <a href="../php/not_implemented.php" class="nav-link link">Contact</a>
             </li>
             <li class="nav-item">
-                    <a href="#" class="nav-link link">About</a>
+                    <a href="../php/not_implemented.php" class="nav-link link">About</a>
             </li>
         </ul>
         <section class="menu-branding">
