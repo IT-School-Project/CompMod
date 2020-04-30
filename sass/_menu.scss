@@ -1,0 +1,252 @@
+// Menu Button
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    left: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: set-text-color($primary-color);
+        @include easeOut;
+    }
+
+    // Rotate Into X Menu Lines
+    &.close {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+
+        .btn-line {
+
+            // Line 1 - Rotate
+            &:nth-child(1) {
+                transform: rotate(40deg) translate(5px, 5px);
+                -webkit-transform: rotate(40deg) translate(5px, 5px);
+                -moz-transform: rotate(40deg) translate(5px, 5px);
+                -ms-transform: rotate(40deg) translate(5px, 5px);
+                -o-transform: rotate(40deg) translate(5px, 5px);
+            }
+
+            // Line 2 - Hide
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            // Line 3 - Rotate
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+                -webkit-transform: rotate(-45deg) translate(7px, -6px);
+                -moz-transform: rotate(-45deg) translate(7px, -6px);
+                -ms-transform: rotate(-45deg) translate(7px, -6px);
+                -o-transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
+
+.cart-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    
+    a {
+        text-decoration: none;
+
+        .fa-shopping-basket {
+
+            font-size: 26px;
+            color: $primary-color;
+        }
+    }
+}
+
+// Menu OVerlay
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    z-index: 1;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-branding,
+    &-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &-nav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: rgba(darken($main-white, 5), 0.9);
+        transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, 100%, 0);
+        -moz-transform: translate3d(0, 100%, 0);
+        -ms-transform: translate3d(0, 100%, 0);
+        -o-transform: translate3d(0, 100%, 0);
+        @include easeOut;
+
+        &.show {
+            // Slide In From Bottom
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+        }
+    }
+
+    // Branding Side
+    &-branding {
+        background: rgba($main-white, 0.9);
+        transform: translate3d(0, -100%, 0);
+        -webkit-transform: translate3d(0, -100%, 0);
+        -moz-transform: translate3d(0, -100%, 0);
+        -ms-transform: translate3d(0, -100%, 0);
+        -o-transform: translate3d(0, -100%, 0);
+        @include easeOut;
+
+        &.show {
+            // Slide In From Top
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+        }
+
+        .favcon {
+            width: 200px;
+            height: 200px;
+            background: $favcon;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border: solid 4px $primary-color;
+        }
+    }
+
+    .nav-item {
+        transform: translate3d(-1000px, 0, 0);
+        -webkit-transform: translate3d(-1000px, 0, 0);
+        -moz-transform: translate3d(-1000px, 0, 0);
+        -ms-transform: translate3d(-1000px, 0, 0);
+        -o-transform: translate3d(-1000px, 0, 0);
+        @include easeOut;
+
+        &.show {
+            // Slide In From Left
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+        }
+
+        .nav-form {
+            text-align: center;
+
+            input[type="text"], input[type="password"] {
+                border: 2px solid $primary-color;
+                background: none;
+                display: block;
+                height: 30px;
+                width: 400px;
+                font-size: 16px;
+                color: $primary-color;
+                text-indent: 5px;
+
+                &::placeholder {
+                    color: $primary-color;
+                    font-size: 16px;
+                }
+            }
+
+            .nav-button {
+                height: 40px;
+                width: 100px;
+                background: $primary-color;
+                color: $white;
+                outline: none;
+                border: none;
+                border-radius: 3px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -o-border-radius: 3px;
+                font-size: 16px;
+                cursor: pointer;
+
+                &:hover {
+                    height: 45px;
+                    width: 110px;
+                    font-size: 18px;
+                    transition: all 0.3s ease-out;
+                    -webkit-transition: all 0.3s ease-out;
+                    -moz-transition: all 0.3s ease-out;
+                    -ms-transition: all 0.3s ease-out;
+                    -o-transition: all 0.3s ease-out;
+                }
+            }
+        }
+
+        .search-form {
+            margin-bottom: 20px;
+
+            .fa-search {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                font-size: 24px;
+                cursor: pointer;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .link {
+        display: inline-block;
+        position: relative;
+        font-size: 26px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: set-text-color($primary-color);
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover {
+            color: $fourth-color;
+        }
+    }
+}
+
+// Delay Each Nav ITem Slide By 0.1 Second
+@for $x from 1 through 7 {
+    .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+    }
+}

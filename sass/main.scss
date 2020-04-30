@@ -1,5 +1,8 @@
-@import "../dist/inc/vars.scss";
+@import "_config.scss";
+@import "_menu.scss";
+@import "_mobile.scss";
 
+// SIGNUP
 .signup-body {
     margin: 0;
     padding: 0;
@@ -96,3 +99,26 @@
         flex-direction: row;
     }
 }
+//END SIGNUP
+
+// ADMIN PAGE
+.admin-head {
+    margin-left: 10px;
+    margin-bottom: 0;
+    color: $secondary-color;
+  }
+  
+  .adds {
+    margin-left: 5px;
+  
+    fieldset {
+      width: 22%;
+      border-radius: 8px;
+      border: solid $secondary-color 2px;
+  
+      legend {
+        color: $secondary-color;
+      }
+    }
+  }
+// END ADMIN PAGE
