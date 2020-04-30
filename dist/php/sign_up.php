@@ -51,14 +51,14 @@ is_numeric($_POST['post_nr'])){
         <form class="signup-form" action="sign_up.php" method="post">
           <section class="wrap-input uname">
             <label for="inputUsername" class="login-form-title">Username</label>
-            <input id="inputUsername" name="username" type="text" placeholder="TheLegend27">
+            <input class="inputUsername" name="username" type="text" placeholder="TheLegend27">
             
           </section>
           
           <section class="wrap-input pwd">
             <label for="inputPassword">Password</label>
             <input 
-              id="inputPassword"
+              class="inputPassword"
               name="password"
               type="password"
               placeholder="Hunter2"
@@ -69,7 +69,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input email">
             <label for="inputEpost">Email</label>
             <input 
-              id="inputEpost"
+              class="inputEpost"
               name="epost"
               type="text"
               placeholder="yourname@email.com"
@@ -80,7 +80,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input fname">
             <label for="inputfirst_name">First Name</label>
             <input 
-              id="inputFirstName"
+              class="inputFirstName"
               name="first_name"
               type="text"
               placeholder="John"
@@ -91,7 +91,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input sname">
             <label for="inputSurname">Surname</label>
             <input 
-              id="inputSurname"
+              class="inputSurname"
               name="surname"
               type="text"
               placeholder="Doe">
@@ -101,7 +101,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input post_nr">
             <label for="inputPost_nr">Postal Code</label>
             <input 
-              id="inputPost_nr"
+              class="inputPost_nr"
               name="post_nr"
               type="text"
               placeholder="1337"
@@ -112,7 +112,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input address">
             <label for="inputAddress">Address</label>
             <input 
-              id="inputAddress"
+              class="inputAddress"
               name="address"
               type="text"
               placeholder="42 Wallaby Way, Sydney"
@@ -123,7 +123,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input address2">
             <label for="inputAddress2">Address 2</label>
             <input 
-              id="inputAddress2"
+              class="inputAddress2"
               name="address2"
               type="text"
               placeholder="Not required"
@@ -134,7 +134,7 @@ is_numeric($_POST['post_nr'])){
           <section class="wrap-input img">
             <label for="inputImg">Profile Picture</label>
             <input 
-              id="inputImg"
+              class="inputImg"
               name="img"
               type="text"
               placeholder="Insert url"
