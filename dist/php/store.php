@@ -20,7 +20,7 @@ $result = mysqli_query($conn,$sql);
         <section class = 'listing'>
             <h3>".$row['name']."</h3>
             <img src='".$row['img']."' alt='placeholder image' height = '200' width = '200'>
-            <p class = 'price'>" .$row['price']."</p>
+            <p class = 'price'>" .$row['price']."kr</p>
             <p class = 'address'>".$row['post_nr'].", ".$row['address1']."</p>
         </section>
         </a>";
