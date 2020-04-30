@@ -19,7 +19,7 @@ $result = mysqli_query($conn,$sql);
         <a href = 'listing.php?id=".$row['id']."'>
         <section class = 'listing'>
             <h3>".$row['name']."</h3>
-            <img src='".$row['img']."' alt='placeholder image' height = '200' width = '200'>
+            <img src='".$row['img']."' onerror='this.src=\"../img/placeholder.png\"' alt='placeholder image' height = '200' width = '200'>
             <p class = 'price'>" .$row['price']."kr</p>
             <p class = 'address'>".$row['post_nr'].", ".$row['address1']."</p>
         </section>

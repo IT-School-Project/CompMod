@@ -63,6 +63,9 @@ if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']
         echo "Sorry, there was an error uploading your file.";
     }
   }
+
+  $sql = "UPDATE listing SET img = '$target_file' WHERE id = $listing_id";
+  $result = mysqli_query($conn, $sql);
 }
 
 
