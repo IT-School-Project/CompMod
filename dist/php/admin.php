@@ -1,7 +1,7 @@
 <?php 
 require '../inc/header.php';
+require '../inc/nav.php';
 require '../config/dbconnect.php';
-session_start();
 
 if (isset($_SESSION['userid'])){
 

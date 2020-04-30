@@ -1,23 +1,25 @@
 <?php 
 require '../config/dbconnect.php';
 require '../inc/header.php';
-session_start();
+require '../inc/nav.php';
 
 if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']) && isset($_POST['description']) && is_numeric($_POST['price'])){
   $userid = $_SESSION['userid'];
   $title = $_POST['title'];
   $price = $_POST['price'];
   $description = $_POST['description'];
-  echo $userid.$title.$price.$description;
 
   $sql = "INSERT INTO listing(name,price,date,description,user) VALUES ('$title', $price, NOW(), '$description', $userid)";
   $result = mysqli_query($conn, $sql);
+
+  if (!$result){
+    die("pffffft");
+  }
   
   $sql = "SELECT MAX(id) FROM listing";
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
-  $listing_id = $row['id'];
-  echo $listing_id;
+  $listing_id = $row['MAX(id)'];
 }
 
 
@@ -34,11 +36,17 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
     $cat_id = $row['id'];
     $sql = "INSERT INTO parts(name, cat_id) VALUES('$p', $cat_id)";
     $result = mysqli_query($conn,$sql);
+    $sql = "SELECT MAX(id) FROM parts";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    $part_id = $row['MAX(id)'];
+    $sql = "INSERT INTO xparts(listing_id,parts_id,important) VALUES($listing_id,$part_id,0)"; #TODO: is important checker
+    $result = mysqli_query($conn,$sql);
   }
 }
 ?>
 <body>
-  <?php require '../inc/nav.php'?>
+  
   <form id = "listing" method = "POST">
     <label for="inputTitle">Title</label>
     <input 
