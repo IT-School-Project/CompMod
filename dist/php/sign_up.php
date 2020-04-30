@@ -2,6 +2,7 @@
 require '../config/dbconnect.php';
 if (( 
 isset($_POST['username']) && 
+isset($_POST['password']) &&
 isset($_POST['epost']) && 
 isset($_POST['first_name']) && 
 isset($_POST['surname']) && 
