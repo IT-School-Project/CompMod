@@ -25,7 +25,8 @@ if (isset($_POST['password']) && isset($_POST['username'])){
     $_SESSION["userid"] = $row["id"];
   }
   else {
-    echo "num of rows returned: " . mysqli_num_rows($result) . ". In other words: Failed to sign in.";
+    $message = "num of rows returned: " . mysqli_num_rows($result) . ". In other words: Failed to sign in.";
+    echo "<script type='text/javascript'>alert('$message');</script>";
     session_destroy();
   }
 }
@@ -39,18 +40,23 @@ if (isset($_GET['logout'])){
 
 if (!isset($_SESSION["userid"])){
   echo '
-  <form method="POST">
-    <label for="inputUsername">Username</label>
-    <input type="text" name="username" id="inputUsername">
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword">
-    <input type="submit">
-  </form>';
+  <li class="nav-item">
+    <form class="nav-form" method="POST">
+      <input class="nav-input" type="text" name="username" id="inputUsername" placeholder="Username">
+      <br>
+      <input class="nav-input" type="password" name="password" id="inputPassword" placeholder="Password">
+      <br>
+      <input class="nav-button" type="submit" value="Log In">
+    </form>
+  </li>';
 }
 else {
-  echo '<form method = "GET">
-  <input type="hidden" name = "logout" value = "True">
-  <input type="submit" value="Sign out">
-  </form>';
+  echo '
+  <li class="nav-item">
+    <form class="nav-form" method = "GET">
+      <input type="hidden" name = "logout" value = "True">
+      <input class="nav-button" type="submit" value="Sign out">
+    </form>
+  </li>';
 }
 ?>
