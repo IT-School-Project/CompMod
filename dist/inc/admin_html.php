@@ -1,5 +1,4 @@
 <body class="admin-body">
-  <?php require '../inc/nav.php'?>
   <section class="wrapper">
     <h1 class="admin-head">Admin Page</h1>
 
