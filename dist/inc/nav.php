@@ -1,53 +1,40 @@
-<nav class="navbar">
-    <ul class="nav">
-        <li class="dropdown-li">
-            <section class="dropdown">
-                <a class="dd-menu"><i class="fa fa-bars"></i></a>
-                <ul class="dropdown_list">
-                    <li class="list-item"><a href="">Home</a></li>
-                    <li class="list-item"><a href="../php/store.php">Store</a></li>
-                    <li class="list-item"><a href="">Wishlist</a></li>
-                    <li class="list-item"><a href="">Contact</a></li>
-                </ul>
-            </section>
-        </li>
-
-        <li class="img">
-            <img class="logo" src="../img/logo.png" alt="">
-        </li>
-
-        <li class="search-bar">
-            <section class="search">
-                <form action="" method="get" class="search-form">
-                    <input type="text" name="search" class="search-bar" placeholder="Search">
-                    <a onclick="this.closest('form').submit();return false;"><i class="icon fa fa-search"></i></a>
-                </form>
-            </section>
-        </li>
-
-        <li class="login">
-            
-        </li>
-        <li class="login">
-            <?php require 'user_handler.php';?>
-        </li>
-        <li class="signup">
-            <a class="button" href="../php/sign_up.php">Sign up</a>
-        </li>
-
-        <li class="cart">
-            <a href=""><i class="fa fa-shopping-basket"></i></a>
-        </li>
-    </ul>
-        
-    
-    <section class="nav-outer">
-        <section class="table">
-            <ul class="navbar-right">
-                <li class="cart"></li>
-            </ul>
-        </section>
+<header>
+    <section class="menu-btn">
+        <section class="btn-line"></section>
+        <section class="btn-line"></section>
+        <section class="btn-line"></section>
     </section>
 
-    <?php require '../config/dbconnect.php';?>
-</nav>
+    <section class="cart-btn">
+        <a href="#"><i class="fa fa-shopping-basket"></i></a>
+    </section>
+    
+    <nav class="menu">
+        <ul class="menu-nav">
+            <li class="nav-item">
+                <form action="" method="get" class="nav-form search-form">
+                    <input type="text" name="search" class="nav-input" placeholder="Search">
+                    <a class="nav-link" onclick="this.closest('form').submit();return false;"><i class="icon fa fa-search"></i></a>
+                </form>
+            </li>
+            <li class="nav-item">
+                <?php require 'user_handler.php';?>
+            </li>
+            <li class="nav-item">
+                <a href="../php/store.php" class="nav-link link">Store</a>
+            </li>
+            <li class="nav-item">
+                <a href="../php/sign_up.php" class="nav-link link">Sign up</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link link">Contact</a>
+            </li>
+            <li class="nav-item">
+                    <a href="#" class="nav-link link">About</a>
+            </li>
+        </ul>
+        <section class="menu-branding">
+            <section class="favcon"></section>
+        </section>
+    </nav>
+</header>
