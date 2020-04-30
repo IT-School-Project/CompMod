@@ -3,7 +3,8 @@ require '../config/dbconnect.php';
 require '../inc/header.php';
 require '../inc/nav.php';
 
-if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']) && isset($_POST['description']) && is_numeric($_POST['price'])){
+if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']) && isset($_POST['description']) && is_numeric($_POST['price']) && isset($_FILES["fileToUpload"]["name"])){
+
   $userid = $_SESSION['userid'];
   $title = $_POST['title'];
   $price = $_POST['price'];
@@ -20,6 +21,48 @@ if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
   $listing_id = $row['MAX(id)'];
+
+  //IMAGE UPLOAD
+  $target_dir = "../img/listings/";
+  $uploadOk = 1;
+  $imageFileType = strtolower(pathinfo(basename( $_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
+  $target_file = $target_dir . $listing_id . "." . $imageFileType;
+  // Check if image file is a actual image or fake image
+  if(isset($_POST["submit"])) {
+      $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+      if($check !== false) {
+          echo "File is an image - " . $check["mime"] . ".";
+          $uploadOk = 1;
+      } else {
+          echo "File is not an image.";
+          $uploadOk = 0;
+      }
+  }
+  // Check if file already exists
+  if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+  } 
+  // Check file size
+  if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+  }
+  // Allow certain file formats
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+  && $imageFileType != "gif" ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $uploadOk = 0;
+  }
+  //if everything is okay try to upload file
+  else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    }
+    else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+  }
 }
 
 
@@ -47,7 +90,7 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
 ?>
 <body>
   
-  <form id = "listing" method = "POST">
+  <form id = "listing" method = "POST" enctype="multipart/form-data">
     <label for="inputTitle">Title</label>
     <input 
       id="inputTitle"
@@ -126,7 +169,8 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
       }
   </script> 
   <input type="button" value="Add" onclick="addInput('listing');" />
-  <input type = "submit" value="Submit">
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type = "submit" value="Submit" name ="submit">
 
 
   </form>
