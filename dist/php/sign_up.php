@@ -7,11 +7,9 @@ isset($_POST['epost']) &&
 isset($_POST['first_name']) && 
 isset($_POST['surname']) && 
 isset($_POST['post_nr']) && 
-isset($_POST['address']) && 
-isset($_POST['img'])) && 
+isset($_POST['address'])) && 
 
 is_numeric($_POST['post_nr'])){
-
 
   $username = $_POST['username'];
   $epost = $_POST['epost'];
@@ -19,8 +17,7 @@ is_numeric($_POST['post_nr'])){
   $password = $_POST['password'];
   $post_nr = $_POST['post_nr'];
   $surname = $_POST['surname']; 
-  $address = $_POST['address']; 
-  $img = $_POST['img']; 
+  $address = $_POST['address'];  
 
   $sqlCheck = "SELECT id, username, password FROM users WHERE username = \"$username\" AND password = SHA2(\"$password\",256)";
   $resultCheck = mysqli_query($conn, $sqlCheck);
@@ -29,7 +26,7 @@ is_numeric($_POST['post_nr'])){
   if (mysqli_num_rows($resultCheck) == 0){
     if (isset($_POST['address2'])){
       $address2 = $_POST['address2'];
-      $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,address2,post_nr,img) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$address2\", \"$post_nr\", \"$img\" )";
+      $sql = "INSERT INTO users(username,password,email,first_name,surname,address1,address2,post_nr) VALUES (\"$username\", SHA2(\"$password\", 256), \"$epost\", \"$name\", \"$surname\", \"$address\", \"$address2\", \"$post_nr\")";
     }
 
     else{
@@ -130,16 +127,6 @@ is_numeric($_POST['post_nr'])){
               placeholder="Not required"
             >
             
-          </section>
-          
-          <section class="wrap-input img">
-            <label for="inputImg">Profile Picture</label>
-            <input 
-              id="inputImg"
-              name="img"
-              type="text"
-              placeholder="Insert url"
-            >
           </section>
           
           <section class="wrap-input">
