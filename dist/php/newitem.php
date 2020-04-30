@@ -180,6 +180,7 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
   
 
 </form>
-  <?php require '../inc/script.php'?>
+  <?php require '../inc/script.php';
+  require '../config/dbdisconnect.php';?>
 </body>
 </html>

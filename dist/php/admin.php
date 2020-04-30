@@ -64,6 +64,6 @@ else{
     echo 'You are not logged in';
 }
 
-
+require '../config/dbdisconnect.php';
 ?>
 
