@@ -1,9 +1,3 @@
-<script>    
-    if(typeof window.history.pushState == 'function') {
-        window.history.pushState({}, "Hide", '<?php echo $_SERVER['PHP_SELF'];?>');
-    }
-</script>
-
 <?php
 session_start();
 
@@ -30,7 +24,7 @@ if (isset($_POST['password']) && isset($_POST['username'])){
   }
 }
 
-if (isset($_GET['logout'])){
+if (isset($_POST['logout'])){
   session_unset();
   session_destroy();
   #echo '<meta http-equiv="Refresh" content="0;" url ="'.$url.'" />';
@@ -48,7 +42,7 @@ if (!isset($_SESSION["userid"])){
   </form>';
 }
 else {
-  echo '<form method = "GET">
+  echo '<form method = "POST">
   <input type="hidden" name = "logout" value = "True">
   <input type="submit" value="Sign out">
   </form>';

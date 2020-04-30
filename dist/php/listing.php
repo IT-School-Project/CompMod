@@ -40,6 +40,7 @@ while($row = mysqli_fetch_array($result))
 <body>
   <h1 class = 'title'><?php echo $listing_name;?></h1>
   <img src="../img/placeholder.png" alt="placeholder">
+  <p class = 'date'><?php echo $listing_date?></p>
   <h4>Beskrivelse</h4>
   <p class = 'description'><?php echo $listing_desc;?></p>
   <h4 class = 'pris'>Pris</h4>
