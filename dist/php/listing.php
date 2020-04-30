@@ -2,14 +2,15 @@
 require '../inc/header.php';
 require '../inc/nav.php';
 require '../config/dbconnect.php';
-
-$sql = "SELECT l.id, l.name, l.price, l.date, l.description, u.first_name, u.surname, u.email, u.post_nr, u.address1
+$listing_id = $_GET['id'];
+$sql = "SELECT l.name, l.price, l.date, l.description, u.first_name, u.surname, u.email, u.post_nr, u.address1
 FROM listing l, users u
-WHERE l.user = u.id"; # AND l.id = $_GET['id']
+WHERE l.user = u.id
+AND l.id = $listing_id"; 
+
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
-$listing_id = $row['id'];
 $listing_name = $row['name'];
 $listing_price = $row['price'];
 $listing_desc = $row['description'];
