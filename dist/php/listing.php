@@ -38,7 +38,7 @@ while($row = mysqli_fetch_array($result))
 
 ?>
 
-<body>
+<body class="listing-body">
   <section class="listing-container">
     <h1 class = 'title'><?php echo $listing_name;?></h1>
     <img src='<?php echo $listing_img;?>' onerror='this.src="../img/placeholder.png"' alt='placeholder image'>

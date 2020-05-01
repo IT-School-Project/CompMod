@@ -1,8 +1,8 @@
 <?php 
   //settings
-  $servername = "localhost:3307";
+  $servername = "localhost";
   $dbusername = "root";
-  $dbpassword = "";
+  $dbpassword = "Leifen_78-22.11.02";
   $dbname = "compmod";
 
   //open connection

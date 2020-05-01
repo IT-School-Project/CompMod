@@ -24,9 +24,7 @@ header {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI Light", sans-serif;
     background: $main-white;
-    text-decoration: none;
 
 
     .wrapper {
@@ -140,6 +138,7 @@ header {
     height: 100%;
     margin: 0;
     line-height: 1.5;
+    background: $main-white;
 
     a {
         color: $primary-color;
@@ -201,30 +200,252 @@ header {
 // END STORE
 
 // LISTING
-.listing-container {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    align-items: center;
+.listing-body {
+    background: $main-white;
 
-    h1,
-    h2,
-    h3,
-    h4 {
-        color: $primary-color;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-
-    p {
-        color: $black;
+    .listing-container {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        align-items: center;
+    
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: $primary-color;
+        }
+    
+        h1 {
+            font-size: 40px;
+        }
+    
+        p {
+            color: $black;
+        }
     }
 }
+// END LISTING
 
+// NEWITEM
+.newitem-body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: $main-white;
+    
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 95%;
+        width: 40%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+
+        #listing {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            background: $white;
+            border-radius: 2%;
+            -webkit-border-radius: 2%;
+            -moz-border-radius: 2%;
+            -ms-border-radius: 2%;
+            -o-border-radius: 2%;
+            padding: 0 30px 28px 30px;
+
+            & * {
+                margin-bottom: 15px;
+            }
+
+            .form-title {
+                font-size: 40px;
+                color: $primary-color;
+                text-align: center;
+            }
+
+            .box {
+                width: 100%;
+                margin-bottom: 10px;
+
+                label {
+                    margin-right: 10px;
+                    color: $primary-color;
+                    font-size: 20px;
+                }
+
+                input {
+                    height: 30px;
+                    width: 60%;
+                    box-shadow: none;
+                    border: none;
+                    
+                    &.add-btn {
+                        width: 180px;
+                        height: 50px;
+                        color: $white;
+                        font-size: 16px;
+                        background: $primary-color;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 15px;
+
+                        &:hover {
+                            background: rgba(darken($primary-color, 5), 1);
+                        }
+                    }
+
+                    &#inputPrice,
+                    &#inputTitle {
+                        border: 2px solid $primary-color;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        padding-left: 5px;
+
+                        &::placeholder {
+                            color: rgba(lighten($primary-color, 1), 0.8);
+                        }
+                    }
+
+                    &#inputPrice {
+                        margin-bottom: 10px;
+                    }
+
+                    &.submit-btn {
+                        width: 180px;
+                        height: 50px;
+                        cursor: pointer;
+                        background: $primary-color;
+                        color: $white;
+                        display: block;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+                        font-size: 16px;
+                        margin-top: 15px;
+                        text-align: center;
+
+                    }
+                }
+
+                textarea {
+                    border: 2px solid $primary-color;
+                    outline: none;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    padding-left: 5px;
+                    height: 150px;
+                    overflow: auto;
+                    resize: none;
+
+                    &::-webkit-scrollbar{
+                        visibility: hidden;
+                    }
+
+                    &::placeholder {
+                        color: rgba(lighten($primary-color, 1), 0.8);
+                    }
+                }
+
+                input[type="file"] {
+                    display: none;
+                }
+
+                .img-label {
+                    color: $white;
+                    height: 50px;
+                    width: 180px;
+                    background-color: $primary-color;
+                    font-size: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+
+                    &:hover {
+                        background: rgba(darken($primary-color, 5), 1);
+                    }
+                }
+            }
+            #add-box {
+                position: relative;
+
+                & * {
+                    margin-bottom: 5px;
+                }
+
+                label {
+                    font-size: 16px;
+                }
+                
+                input {
+                    border-bottom: 2px solid $primary-color;
+                    width: 50%;
+
+                    &::placeholder {
+                        color: rgba(lighten($primary-color, 1), 0.8);
+                    }
+                }
+
+                .select {
+                    width: 120px;
+                    height: 28px;
+                    font-size: 100%;
+                    font-weight: bold;
+                    cursor: pointer;
+                    border-radius: 0;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    -ms-border-radius: 0;
+                    -o-border-radius: 0;
+                    background-color: $primary-color;
+                    color: $white;
+                    border: none;
+                    border-bottom: 2px soild rgba(darken($primary-color, 10), 1);
+                    padding: 1px 2px 1px 4px;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+                    -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+                    -moz-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+                    -ms-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+                    -o-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+            

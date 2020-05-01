@@ -38,9 +38,7 @@ $result = mysqli_query($conn,$sql);
             }
             ?>
         </section>
-        </a>";
-    }
-    ?>
+        </a>
     <?php require '../inc/script.php';
     require '../config/dbdisconnect.php';?>
 </body>

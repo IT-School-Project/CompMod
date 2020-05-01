@@ -91,95 +91,103 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
   }
 }
 ?>
-<body>
-  
-  <form id = "listing" method = "POST" enctype="multipart/form-data">
-    <label for="inputTitle">Title</label>
-    <input 
-      id="inputTitle"
-      name="title"
-      type="text"
-      placeholder="Grab some attention"
-    >
+<body class="newitem-body">
+  <section class="wrapper">
+    <form id = "listing" method = "POST" enctype="multipart/form-data">
+      <h1 class="form-title">Add Listing</h1>
+      <section class="box">
+        <label for="inputTitle">Title:</label>
+        <input 
+          id="inputTitle"
+          name="title"
+          type="text"
+          placeholder="Grab some attention"
+        >
+      </section>
 
-    <label for="inputPrice">Price</label>
-    <input 
-      id="inputPrice"
-      name="price"
-      type="text"
-      placeholder="A fair price"
-    >
+      <sextion class="box">
+        <label for="inputPrice">Price:</label>
+        <input 
+          id="inputPrice"
+          name="price"
+          type="text"
+          placeholder="A fair price"
+        >
+      </sextion>
 
-    <label for="inputDescription">Description</label>
-    <textarea rows="4" cols="50" 
-      id="inputDescription"
-      name="description"
-      type="text"
-      placeholder="Make them trust you"
-    ></textarea>
+      <section class="box">
+        <label for="inputDescription">Description:</label>
+        <textarea rows="4" cols="50"
+          id="inputDescription"
+          name="description"
+          type="text"
+          placeholder="Make them trust you"
+        ></textarea>
+      </section>
 
-    <br><br>
-    
-    
+      <section class="box">
+        <input type="file" name="fileToUpload" id="fileToUpload" accept="image/png, image/jpg, image/jpeg, image/gif">
+        <label class="img-label" for="fileToUpload"><i class="material-icons">add_photo_alternate</i>&nbsp; Choose a Photo</label>
+        <input class="add-btn" type="button" value="Add Category" onclick="addInput('add-box');" />
+      </section>
+      <section id="add-box" class="box"></section>
+      <section class="box sumbit">
+          <input id="submit-btn" class="submit-btn" type = "submit" value="Submit" name ="submit">
+      </section>
+    </form>
     <?php
-    $categories = array();
-    $sql2 = "SELECT id,category FROM category";
-    $result2 = mysqli_query($conn, $sql2);
-    while($row = mysqli_fetch_array($result2))
-    {
-      array_push(
-        $categories, $row['category']
-      );
-    }
-    $js_array = json_encode($categories);
-    ?>
-    <script type = 'text/javascript'>
-      var choices = <?php echo $js_array; ?>;
-      var addInputNum = 0;
-      function addInput(selectName) {
-        var newLabel = document.createElement('label');
-        newLabel.setAttribute("for", "inputPartName")
-        newLabel.innerHTML = "Name";
-        document.getElementById(selectName).appendChild(newLabel);
-
-        var newText = document.createElement('input');
-        var selectHTML = "";
-        newText.setAttribute("id", "inputPartName")
-        newText.setAttribute("name", "partName[]")
-        newText.setAttribute("type", "text")
-        newText.setAttribute("placeholder", "example: Intel i7 9700k")
-        newText.innerHTML = selectHTML;
-        document.getElementById(selectName).appendChild(newText);
-
-
-
-        var newLabel = document.createElement('label');
-        newLabel.setAttribute("for", "selectCategory")
-        newLabel.innerHTML = "Select Part Category";
-        document.getElementById(selectName).appendChild(newLabel);
-
-        var newSelect = document.createElement('select');
-        var selectHTML = "";
-        for(i = 0; i < choices.length; i = i + 1) {
-          selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
-        }
-        newSelect.setAttribute("id", "selectCategory")
-        newSelect.setAttribute("name", "category[]")
-        newSelect.innerHTML = selectHTML;
-        document.getElementById(selectName).appendChild(newSelect);
-
-        addInputNum++
+      $categories = array();
+      $sql2 = "SELECT id,category FROM category";
+      $result2 = mysqli_query($conn, $sql2);
+      while($row = mysqli_fetch_array($result2))
+      {
+        array_push(
+          $categories, $row['category']
+        );
       }
-  </script> 
-  <input type="button" value="Add" onclick="addInput('listing');" />
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type = "submit" value="Submit" name ="submit">
+      $js_array = json_encode($categories);
+      ?>
+      <script type = 'text/javascript'>
+        var choices = <?php echo $js_array; ?>;
+        var addInputNum = 0;
+        function addInput(selectName) {
+          var newLabel = document.createElement('label');
+          newLabel.setAttribute("for", "inputPartName")
+          newLabel.innerHTML = "Name:";
+          document.getElementById(selectName).appendChild(newLabel);
+
+          var newText = document.createElement('input');
+          var selectHTML = "";
+          newText.setAttribute("id", "inputPartName")
+          newText.setAttribute("name", "partName[]")
+          newText.setAttribute("type", "text")
+          newText.setAttribute("placeholder", "example: Intel i7 9700k")
+          newText.innerHTML = selectHTML;
+          document.getElementById(selectName).appendChild(newText);
 
 
-  </form>
-  
 
-</form>
+          var newLabel = document.createElement('label');
+          newLabel.setAttribute("for", "selectCategory")
+          newLabel.setAttribute("class", "categoryLabel")
+          newLabel.innerHTML = "Category:";
+          document.getElementById(selectName).appendChild(newLabel);
+
+          var newSelect = document.createElement('select');
+          var selectHTML = "";
+          for(i = 0; i < choices.length; i = i + 1) {
+            selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
+          }
+          newSelect.setAttribute("id", "selectCategory")
+          newSelect.setAttribute("class", "select")
+          newSelect.setAttribute("name", "category[]")
+          newSelect.innerHTML = selectHTML;
+          document.getElementById(selectName).appendChild(newSelect);
+
+          addInputNum++
+        }
+      </script>
+  </section>
   <?php require '../inc/script.php';
   require '../config/dbdisconnect.php';?>
 </body>
