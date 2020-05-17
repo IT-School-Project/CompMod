@@ -105,7 +105,7 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
         >
       </section>
 
-      <sextion class="box">
+      <section class="box">
         <label for="inputPrice">Price:</label>
         <input 
           id="inputPrice"
@@ -113,7 +113,7 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
           type="text"
           placeholder="A fair price"
         >
-      </sextion>
+      </section>
 
       <section class="box">
         <label for="inputDescription">Description:</label>
