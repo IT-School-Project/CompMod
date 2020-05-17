@@ -16,12 +16,16 @@
             <li class="nav-item">
                 <?php require 'user_handler.php';?>
             </li>
-            <li class="nav-item">
-                <form class="nav-form" action = "newitem.php" method = "POST">
-                    <input type = "hidden" name = "new" value = "true">
-                    <input class="nav-button sell-item" type = "submit" value = "Sell Item">
-                </form>
-            </li>
+            <?php
+            if(isset($_SESSION['userid'])){
+                echo('<li class="nav-item">
+                    <form class="nav-form" action = "newitem.php" method = "POST">
+                        <input type = "hidden" name = "new" value = "true">
+                        <input class="nav-button sell-item" type = "submit" value = "Sell Item">
+                    </form>
+                </li>');
+            }
+            ?>
             <li class="nav-item">
                 <a href="../php/store.php" class="nav-link link">Store</a>
             </li>

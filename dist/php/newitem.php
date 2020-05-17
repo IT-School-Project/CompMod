@@ -14,7 +14,7 @@ if(isset($_SESSION['userid']) && isset($_POST['title']) && isset($_POST['price']
   $result = mysqli_query($conn, $sql);
 
   if (!$result){
-    die("pffffft");
+    die("Something went wrong, we couldn't upload your post.");
   }
   
   $sql = "SELECT MAX(id) FROM listing";

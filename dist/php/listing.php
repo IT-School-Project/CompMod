@@ -8,6 +8,7 @@ FROM listing l, users u
 WHERE l.user = u.id
 AND l.id = $listing_id"; 
 
+
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 

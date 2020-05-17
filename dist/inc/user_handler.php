@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_POST['password']) && isset($_POST['username'])){
-  require '../config/dbconnect.php';
+  require_once '../config/dbconnect.php';
   $password = $_POST['password'];
   $username = $_POST['username'];
 

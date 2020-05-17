@@ -1,4 +1,4 @@
-<?php require '../config/dbconnect.php';
+<?php require_once '../config/dbconnect.php';
 require '../inc/header.php';
 
 if(isset($_GET['search'])){
@@ -17,7 +17,7 @@ else{
     ORDER BY l.date DESC 
     LIMIT 16";
 }
-$result = mysqli_query($conn,$sql);
+$listings = mysqli_query($conn,$sql);
 ?>
 <body class="store-body">
     <?php require '../inc/nav.php'?>
@@ -25,7 +25,7 @@ $result = mysqli_query($conn,$sql);
     <section class="container">
         <section class="item">
             <?php
-            while ($row = mysqli_fetch_array($result)){
+            while ($row = mysqli_fetch_array($listings)){
                 echo "
                     <section class = 'listing'>
                         <a href = 'listing.php?id=".$row['id']."'>
