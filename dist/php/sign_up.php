@@ -129,7 +129,7 @@ is_numeric($_POST['post_nr'])){
             
           </section>
           
-          <section class="wrap-input">
+          <section class="wrap-input signup-btn">
             <button class="signup-form-btn">Sign Up</button>
           </section>
         </form>

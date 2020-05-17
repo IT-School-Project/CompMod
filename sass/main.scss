@@ -1,14 +1,15 @@
 @import "_config.scss";
 @import "_menu.scss";
 @import "_mobile.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 // General
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -26,16 +27,17 @@ header {
     box-sizing: border-box;
     background: $main-white;
 
-
     .wrapper {
+        margin-top: 70px;
+        position: absolute;
         max-width: 500px;
         width: 100%;
         background: $white;
-        margin: 20px auto;
-        padding: 30px;
+        padding: 30px 30px 50px 30px;
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
-        top: 50%;
-        transform: translateY(25%);
+        left: 50%;
+        transform: translateX(-50%);
+
 
         .signup-form-title {
             font-size: 24px;
@@ -49,6 +51,7 @@ header {
         .signup-form {
             width: 100%;
 
+
             .wrap-input {
                 margin-bottom: 15px;
                 display: flex;
@@ -57,7 +60,7 @@ header {
                 label {
                     width: 200px;
                     color: $primary-color;
-                    margin-right: 10px;
+                    margin: 0 10px 0 5px;
                     font-size: 14px;
                 }
 
@@ -73,7 +76,6 @@ header {
                     &:focus {
                         background: #eee;
                     }
-    
                 }
 
                 .signup-form-btn {
@@ -102,6 +104,7 @@ header {
         }
     }
 }
+
 //END SIGNUP
 
 // ADMIN PAGE
@@ -112,23 +115,24 @@ header {
         color: $secondary-color;
         margin-top: 70px;
         margin-left: 20px;
-      }
-      
-      .adds {
+    }
+
+    .adds {
         margin-left: 20px;
         margin-top: 10px;
-      
+
         fieldset {
-          width: 22%;
-          border-radius: 8px;
-          border: solid $secondary-color 2px;
-      
-          legend {
-            color: $secondary-color;
-          }
+            width: 22%;
+            border-radius: 8px;
+            border: solid $secondary-color 2px;
+
+            legend {
+                color: $secondary-color;
+            }
         }
     }
 }
+
 // END ADMIN PAGE
 
 // STORE
@@ -138,7 +142,7 @@ header {
     height: 100%;
     margin: 0;
     line-height: 1.5;
-    background: $main-white;
+    background: $white;
 
     a {
         color: $primary-color;
@@ -155,19 +159,16 @@ header {
         grid-template-columns: repeat(4, 1fr);
         box-sizing: border-box;
         position: absolute;
-        top: 50%;
+        top: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
+        transform: translateX(-50%);
+        margin: 70px 0;
 
         .listing {
+            background: $white;
 
             h3 {
                 font-size: 30px;
-                
             }
 
             img {
@@ -190,46 +191,69 @@ header {
             p {
                 margin-left: 5px;
             }
-    
+
             &:nth-child(1n) {
                 margin-left: 20px;
             }
         }
     }
 }
+
 // END STORE
 
 // LISTING
 .listing-body {
-    background: $main-white;
+    background: $white;
 
     .listing-container {
         position: absolute;
-        top: 65%;
+        top: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
+        transform: translateX(-50%);
         align-items: center;
-    
+        background: $main-white;
+        padding: 0 3%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 70px 0;
+
         h1,
         h2,
         h3,
         h4 {
             color: $primary-color;
         }
-    
+
         h1 {
             font-size: 40px;
         }
-    
+
+        h2 {
+            margin: 10px 0;
+        }
+
         p {
             color: $black;
+            overflow-wrap: break-word;
+        }
+
+        img {
+            max-height: 600px;
+            max-width: 1000px;
+            width: auto;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .deler {
+            padding: 0 0 20px 0;
         }
     }
 }
+
 // END LISTING
 
 // NEWITEM
@@ -238,21 +262,16 @@ header {
     padding: 0;
     box-sizing: border-box;
     background: $main-white;
-    
+    width: 100%;
+    height: 100%;
+
     .wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 95%;
-        width: 40%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
 
         #listing {
             position: absolute;
+            margin-top: 70px;
             left: 50%;
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);
@@ -265,7 +284,9 @@ header {
             -moz-border-radius: 2%;
             -ms-border-radius: 2%;
             -o-border-radius: 2%;
-            padding: 0 30px 28px 30px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
 
             & * {
                 margin-bottom: 15px;
@@ -289,10 +310,10 @@ header {
 
                 input {
                     height: 30px;
-                    width: 60%;
+                    width: 40%;
                     box-shadow: none;
                     border: none;
-                    
+
                     &.add-btn {
                         width: 180px;
                         height: 50px;
@@ -304,9 +325,7 @@ header {
                         -moz-border-radius: 5px;
                         -ms-border-radius: 5px;
                         -o-border-radius: 5px;
-                        display: flex;
-                        justify-content: center;
-                        margin-top: 15px;
+                        text-align: center;
 
                         &:hover {
                             background: rgba(darken($primary-color, 5), 1);
@@ -331,25 +350,8 @@ header {
                     &#inputPrice {
                         margin-bottom: 10px;
                     }
-
-                    &.submit-btn {
-                        width: 180px;
-                        height: 50px;
-                        cursor: pointer;
-                        background: $primary-color;
-                        color: $white;
-                        display: block;
-                        border-radius: 5px;
-                        -webkit-border-radius: 5px;
-                        -moz-border-radius: 5px;
-                        -ms-border-radius: 5px;
-                        -o-border-radius: 5px;
-                        font-size: 16px;
-                        margin-top: 15px;
-                        text-align: center;
-
-                    }
                 }
+
 
                 textarea {
                     border: 2px solid $primary-color;
@@ -364,7 +366,7 @@ header {
                     overflow: auto;
                     resize: none;
 
-                    &::-webkit-scrollbar{
+                    &::-webkit-scrollbar {
                         visibility: hidden;
                     }
 
@@ -372,6 +374,29 @@ header {
                         color: rgba(lighten($primary-color, 1), 0.8);
                     }
                 }
+            }
+
+            .sumbit_section {
+                text-align: center;
+
+                .submit-btn {
+                    width: 180px;
+                    height: 50px;
+                    cursor: pointer;
+                    background: $primary-color;
+                    color: $white;
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    font-size: 16px;
+                    text-align: center;
+                }
+            }
+
+            .image {
+
 
                 input[type="file"] {
                     display: none;
@@ -383,9 +408,10 @@ header {
                     width: 180px;
                     background-color: $primary-color;
                     font-size: 16px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    margin-right: 0;
+                    text-align: center;
+                    display: inline-block;
+                    line-height: 50px;
                     cursor: pointer;
                     border-radius: 5px;
                     -webkit-border-radius: 5px;
@@ -398,6 +424,7 @@ header {
                     }
                 }
             }
+
             #add-box {
                 position: relative;
 
@@ -408,10 +435,12 @@ header {
                 label {
                     font-size: 16px;
                 }
-                
+
                 input {
                     border-bottom: 2px solid $primary-color;
-                    width: 50%;
+                    width: 40%;
+                    margin-right: 5px;
+                    outline: none;
 
                     &::placeholder {
                         color: rgba(lighten($primary-color, 1), 0.8);
@@ -437,15 +466,19 @@ header {
                     appearance: none;
                     -webkit-appearance: none;
                     -moz-appearance: none;
-                    transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-                    -webkit-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-                    -moz-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-                    -ms-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
-                    -o-transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+                    transition: color 0.3s ease, background-color 0.3s ease,
+                        border-bottom-color 0.3s ease;
+                    -webkit-transition: color 0.3s ease, background-color 0.3s ease,
+                        border-bottom-color 0.3s ease;
+                    -moz-transition: color 0.3s ease, background-color 0.3s ease,
+                        border-bottom-color 0.3s ease;
+                    -ms-transition: color 0.3s ease, background-color 0.3s ease,
+                        border-bottom-color 0.3s ease;
+                    -o-transition: color 0.3s ease, background-color 0.3s ease,
+                        border-bottom-color 0.3s ease;
                     outline: none;
                 }
             }
         }
     }
 }
-            

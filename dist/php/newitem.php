@@ -125,13 +125,15 @@ if(isset($_POST['category']) && isset($_POST['partName'])){
         ></textarea>
       </section>
 
-      <section class="box">
+      <section class="box image">
+        <label class="img-label" for="fileToUpload"> Choose a Photo</label>
         <input type="file" name="fileToUpload" id="fileToUpload" accept="image/png, image/jpg, image/jpeg, image/gif">
-        <label class="img-label" for="fileToUpload"><i class="material-icons">add_photo_alternate</i>&nbsp; Choose a Photo</label>
+      </section>
+      <section class="box">
         <input class="add-btn" type="button" value="Add Category" onclick="addInput('add-box');" />
       </section>
       <section id="add-box" class="box"></section>
-      <section class="box sumbit">
+      <section class="box sumbit_section">
           <input id="submit-btn" class="submit-btn" type = "submit" value="Submit" name ="submit">
       </section>
     </form>
