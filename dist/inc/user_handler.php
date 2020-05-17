@@ -37,9 +37,7 @@ if (!isset($_SESSION["userid"])){
   <li class="nav-item">
     <form class="nav-form" method="POST">
       <input class="nav-input" type="text" name="username" id="inputUsername" placeholder="Username">
-      <br>
       <input class="nav-input" type="password" name="password" id="inputPassword" placeholder="Password">
-      <br>
       <input class="nav-button" type="submit" value="Log In">
     </form>
   </li>';
