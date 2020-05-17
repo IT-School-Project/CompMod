@@ -6,7 +6,7 @@ $main-white: #f3e1dd;
 $black: #000000;
 $white: #ffffff;
 $hover: #344055;
-$favcon: url(../dist/img/favcon_big.png);
+$favcon: url('../img/favcon_big.png');
 
 @mixin easeOut {
     transition: all 0.5s ease-out;
@@ -19,51 +19,59 @@ $favcon: url(../dist/img/favcon_big.png);
 @mixin selectTransition {
     transition: all .2s;
     -webkit-transition: all .2s;
-	-moz-transition: all .2s;
-	-ms-transition: all .2s;
-	-o-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
 }
 
 @function set-text-color($color) {
     @if (lightness($color) > 40) {
         @return $white;
-    } @else {
+    }
+
+    @else {
         @return $primary-color;
     }
 }
 
-@mixin mediaSm {
-    @media screen and (max-width: 500px) {
+@mixin mediaSMb {
+    @media screen and (max-width: 320px) {
         @content;
-        .wrapper .form .inputfield {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    
-        .wrapper .form .inputfield label {
-            margin-bottom: 5px;
-        }
-    
-        .wrapper .form .inputfield.terms {
-            flex-direction: row;
-        }
+    }
+}
+
+@mixin mediaMb {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
+
+@mixin mediaXs {
+    @media screen and (min-width: 451px) and (max-width: 849px) {
+        @content;
+    }
+}
+
+@mixin mediaSm {
+    @media screen and (max-width: 850px) {
+        @content;
     }
 }
 
 @mixin mediaMd {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1220px) {
         @content;
     }
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @media screen and (min-width: 1221px) and (max-width: 1640px) {
         @content;
     }
 }
 
 @mixin mediaXl {
-    @media screen and (min-width: 1171px) {
+    @media screen and (min-width: 1641px) {
         @content;
     }
 }
